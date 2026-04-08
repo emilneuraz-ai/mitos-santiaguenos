@@ -1,0 +1,115 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const mitos = [
+  {
+    title: "La Telesita",
+    description: "La bailarina que murió de sed y fuego en el monte santiagueño",
+    category: "Leyenda",
+    slug: "la-telesita"
+  },
+  {
+    title: "El Kakuy",
+    description: "El hombre pájaro que vive en lo profundo del monte",
+    category: "Mito",
+    slug: "el-kakuy"
+  },
+  {
+    title: "El Crespín",
+    description: "El duende de la suerte que habita en las casas santiagueñas",
+    category: "Leyenda",
+    slug: "el-crespin"
+  },
+  {
+    title: "La Dama de Blanco",
+    description: "El alma en pena que vaga por las calles del centro histórico",
+    category: "Leyenda",
+    slug: "la-dama-de-blanco"
+  },
+  {
+    title: "El Nahuelito Santiagueño",
+    description: "La criatura acuática que habita en las profundidades del río Dulce",
+    category: "Mito",
+    slug: "el-nahuelito"
+  },
+  {
+    title: "El Tunal Milenario",
+    description: "Los cactus gigantes con poderes curativos",
+    category: "Leyenda",
+    slug: "el-tunal-milenario"
+  },
+  {
+    title: "El Duende Tragaldabas",
+    description: "El comelón nocturno que roba comida",
+    category: "Leyenda",
+    slug: "el-duende-tragaldabas"
+  },
+  {
+    title: "La Luna del Diablo",
+    description: "La luna roja de mal augurio",
+    category: "Leyenda",
+    slug: "la-luna-del-diablo"
+  },
+  {
+    title: "Los Siete Lagos",
+    description: "Las lagunas misteriosas donde desaparecen los nadadores",
+    category: "Leyenda",
+    slug: "los-siete-lagos"
+  },
+  {
+    title: "El Lobizón",
+    description: "La bestia de la noche que aulla en el monte",
+    category: "Mito",
+    slug: "el-lobizon"
+  },
+  {
+    title: "El Pombero",
+    description: "El guardián del monte protector de los animales",
+    category: "Leyenda",
+    slug: "el-pombero"
+  },
+  {
+    title: "La Novia del Diablo",
+    description: "La tragedia de Dolores y su pacto con el diablo",
+    category: "Leyenda",
+    slug: "la-novia-del-diablo"
+  }
+];
+---
+
+<Layout title="Mitos y Relatos Santiagueños" description="Colección de mitos, leyendas y relatos tradicionales de Santiago del Estero, Argentina">
+  <div class="text-center mb-12">
+    <h1 class="text-5xl font-bold mb-4 text-amber-900">Mitos y Relatos Santiagueños</h1>
+    <p class="text-xl text-amber-700 max-w-2xl mx-auto">
+      Descubre las fascinantes historias que han pasado de generación en generación 
+      en Santiago del Estero, Argentina. Leyendas de amor, terror, magia y misterio 
+      que forman parte del rico folclore santiagueño.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {mitos.map((mito) => (
+      <a 
+        href={`/mitos/${mito.slug}`}
+        class="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-amber-200"
+      >
+        <div class="p-6">
+          <span class="inline-block px-3 py-1 text-sm font-semibold text-amber-700 bg-amber-100 rounded-full mb-3">
+            {mito.category}
+          </span>
+          <h2 class="text-xl font-bold mb-2 text-amber-900">{mito.title}</h2>
+          <p class="text-amber-700">{mito.description}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <div class="mt-12 text-center">
+    <a 
+      href="/historietas" 
+      class="inline-block bg-amber-700 text-white px-8 py-3 rounded-lg hover:bg-amber-800 transition font-semibold"
+    >
+      Ver Historietas
+    </a>
+  </div>
+</Layout>

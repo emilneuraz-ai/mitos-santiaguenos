@@ -1,0 +1,49 @@
+---
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title || 'Mitos Santiagueños'}</title>
+  <meta name="description" content={description || 'Colección de mitos y leyendas de Santiago del Estero'}>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body class="bg-amber-50 text-amber-900 min-h-screen">
+  <header class="bg-amber-900 text-amber-50 py-6 shadow-lg">
+    <div class="container mx-auto px-4">
+      <nav class="flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold font-['Cinzel']">Mitos Santiagueños</a>
+        <div class="space-x-6">
+          <a href="/" class="hover:text-amber-300 transition">Inicio</a>
+          <a href="/historietas" class="hover:text-amber-300 transition">Historietas</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+  
+  <main class="container mx-auto px-4 py-8">
+    <slot />
+  </main>
+  
+  <footer class="bg-amber-900 text-amber-50 py-6 mt-12">
+    <div class="container mx-auto px-4 text-center">
+      <p class="font-['Cinzel']">Mitos y Relatos Santiagueños</p>
+      <p class="text-sm mt-2 opacity-75">Folclore tradicional de Santiago del Estero, Argentina</p>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  body {
+    font-family: 'Crimson Text', serif;
+  }
+  h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+  }
+</style>
