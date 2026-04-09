@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const mitos = [
+    {
+      slug: 'el-sachayoj',
+      title: 'El Sachayoj',
+      categoria: 'Leyenda',
+      // ... contenido completo
+    }
+  ];
+
+  return mitos.map(mito => ({
+    params: { slug: mito.slug },
+    props: { mito }
+  }));
+}
+
+const { mito } = Astro.props;
+---
+
+<Layout title={`${mito.title} - Mito Completo`} description={`Historia, historieta y guión de ${mito.title}`}>
+  <article class="max-w-4xl mx-auto">
+    <!-- Navegación -->
+    <nav class="flex gap-4 mb-8">
+      <a href="/" class="text-orange-600 hover:text-orange-700">← Inicio</a>
+      <a href={`/mitos/${mito.slug}`} class="text-orange-600 hover:text-orange-700">Historia</a>
+      <a href={`/historietas/${mito.slug}`} class="text-orange-600 hover:text-orange-700">Historieta</a>
+      <span class="text-slate-400">Guion</span>
+    </nav>
+
+    <h1 class="text-5xl font-bold mb-4 font-['DM_Serif_Display']">{mito.title}</h1>
+    
+    <!-- Tabs -->
+    <div class="border-b border-slate-200 mb-8">
+      <div class="flex gap-8">
+        <a href={`/mitos/${mito.slug}`} class="pb-4 text-slate-600 hover:text-orange-600">Historia</a>
+        <a href={`/historietas/${mito.slug}`} class="pb-4 text-slate-600 hover:text-orange-600">Historieta</a>
+        <span class="pb-4 border-b-2 border-orange-500 text-orange-600 font-medium">Guion de Película</span>
+      </div>
+    </div>
+
+    <!-- Contenido del guion -->
+    <slot />
+  </article>
+</Layout>

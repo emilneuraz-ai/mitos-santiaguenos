@@ -1,164 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export async function getStaticPaths() {
   const mitos = [
-    {
-      slug: 'el-sachayoj',
-      title: 'El Sachayoj',
-      content: `
-        <p class="text-lg mb-4">Es el "Dios protector de los bosques", donde habita. Se dice que detiene el brazo del hachero cuando éste se inclina para destruir los quebrachos pimpollos o los algarrobos jóvenes que no han terminado de desarrollarse. Cuida las riquezas de los montes y aparece solo cuando sus dominios están siendo arrasados, cuando talan sin consideración las especies sin retoño o cuando sacan con fuego la miel de las lechiguanas.</p>
-        
-        <p class="text-lg mb-4">Lo representan como un viejo canoso. Su larga cabellera son lazos de lokontiy, sus barbas, también largas y blancas son de sajasta. Camina descalzo pero las espinas no lo hieren, jamás deja huellas, su consistencia es como la del humo y solo se le anticipa un remolino en forma de advertencia. Galopa por los montes soplando su tradicional corneta hecha de cuerno de chivo.</p>
-        
-        <p class="text-lg mb-4 italic">"Hay que hacerle caso porque de lo contrario hace morir de sed o de desesperación al no encontrar la senda o la picada para regresar al rancho".</p>
-        
-        <p class="text-lg">La mitificación del Sachayoj es la respuesta a la necesidad de preservar el monte, su flora y su fauna, evitando la destrucción que pueden ocasionar la caza furtiva o la tala de las especies.</p>
-      `
-    },
-    {
-      slug: 'la-mayu-maman',
-      title: 'La Mayu Maman',
-      content: `
-        <p class="text-lg mb-4">Inmortalizada en el pueblo santiagueño como la sirena de nuestros ríos. Su nombre en quichua está compuesto por dos vocablos: <em>mayu</em> (río) y <em>mama</em> (madre), agregando la "n" final (posesivo: su, de el o ella), lo que se interpreta como la madre del río.</p>
-        
-        <p class="text-lg mb-4">La leyenda cuenta que suele aparecer en forma de una hermosa mujer rubia que peina su cabellera con un peine de oro. Hermosa y cautivante, atrae a los hombres y si éstos se le acercan los abraza y se hunde con ellos en el agua.</p>
-        
-        <p class="text-lg">La difícil comprensión del concepto de riesgo, de peligrosidad de los ríos santiagueños; como así también la preservación de este recurso, se resuelve en esta historia que conjuga hombres, geografía y componentes sobrenaturales, otorgándole a la humanidad, la conciencia de límites.</p>
-      `
-    },
-    {
-      slug: 'el-pampayoj',
-      title: 'El Pampayoj',
-      content: `
-        <p class="text-lg mb-4">Su figura representativa es mutante y protege la fauna, evitando la caza a destajo. A veces como un jinete a caballo, o como un avestruz o un guanaco, el "Pampayoj" deambula por las zonas llanas del centro de la provincia, protegiendo a los animales de la caza furtiva, lo que desata su ira.</p>
-        
-        <p class="text-lg mb-4">Cuenta la leyenda que una vez un cazador empezó a matar cuanto animal se le cruzare en el camino; quirquinchos, pichis, corzuelas que abría con un cuchillo para constatar si eran gordos y carnosos. Si no los eran, los desechaba a su paso y proseguía su marcha. Ensimismado en su tarea no advirtió la presencia del Pampayoj que lo apresó y le colgó el caballo de un árbol, a los que tuvo bastante tiempo hasta que el hombre comprendió lo malo que hacía "al desperdiciar comida".</p>
-        
-        <p class="text-lg">La leyenda hace hincapié en una advertencia al hombre que no debe cazar por vicio, gusto o diversión; la caza está reservada solamente para proveerse de alimentos.</p>
-      `
-    },
-    {
-      slug: 'la-uritu-orko',
-      title: 'La Uritu Orko',
-      content: `
-        <p class="text-lg mb-4">Su nombre en quichua significa "cerro de la cotorra". Según la leyenda un hombre con su esposa e hijo fueron a una serranía en busca de loros y catitas. Ya en la cumbre y junto a una barranca, el hombre se ató una cuerda a la cintura, la que era sostenida por su mujer.</p>
-        
-        <p class="text-lg mb-4">Atenta a las indicaciones del marido, la mujer desatendió la vigilancia del niño quien se acercaba a un precipicio. La mujer soltó la cuerda que sujetaba a su marido, dejándolo caer al abismo y corrió intentando salvar a su hijo, sin conseguirlo.</p>
-        
-        <p class="text-lg mb-4">De allí que se la personifica como una mujer sentada en la solitaria cumbre de una roca, evocando su aciago destino.</p>
-        
-        <p class="text-lg">La leyenda, en busca de una enseñanza, asume lo trágico y definitivo como esencia del relato, señalando el riesgo y destacando la peligrosidad que encierran las serranías de la región, especialmente para los niños y para aquellos que desconocen el terreno.</p>
-      `
-    },
-    {
-      slug: 'la-salamanca',
-      title: 'La Salamanca',
-      content: `
-        <p class="text-lg mb-4">Es un lugar oculto entre los breñales, de difícil acceso, diabólico, donde el Diablo (Supay) enseña sus artes y acuden los que se inician en la práctica del maleficio o los que van a aprender toda suerte de maña, destreza o habilidad para destacarse en la pelea, en el amor o en el trabajo. Allí se baila, se hace música, se celebran aquelarres (conciliábulo nocturno entre brujos) y orgías. A la entrada existe un Cristo cabeza abajo al que hay que pegar y escupir, más adelante se ven animales repugnantes y asquerosos: arañas peludas, sapos, escuerzos, víboras, etc.</p>
-        
-        <p class="text-lg mb-4">Luego de ser sometido a varias pruebas, si el visitante resulta vencedor, puede pedir lo que quiera. Caso contrario se vuelve loco al salir.</p>
-        
-        <p class="text-lg mb-4">En la Salamanca se vive en eterno jolgorio. Las brujas y los brujos se regodean allí en lujurioso frenesí. Allí se canta, se baila, se encuentra toda clase de placer.</p>
-        
-        <p class="text-lg mb-4">Se dice que la música solo deja de sonar cuando alguien se arrima a la cueva, y que los animales que pasan cerca se espantan y huyen despavoridos.</p>
-        
-        <p class="text-lg">El mito de la cueva, el laberinto y el centro de la tierra (lo desconocido), aparecen asociados a la terrenal búsqueda del poder y la sabiduría, a la que el individuo suele abocarse sin valorar la esencia misma de su ser.</p>
-      `
-    },
-    {
-      slug: 'el-kakuy',
-      title: 'El Kakuy',
-      content: `
-        <p class="text-lg mb-4">Cuenta la historia acerca de una pareja de hermanos que vivían solos en el bosque. El hermano varón le prodigaba a su hermana tanta ternura y cuidado, que nunca se conoció mayor afecto fraterno. Los mejores frutos, flores, miel, carne de sus animales predilectos y peces eran para ella, mientras ésta le prodigaba el trato más cruel.</p>
-        
-        <p class="text-lg mb-4">Cansado de tanto tormento, un día la invitó al bosque a comer miel. Cubierta la cabeza con una manta para protegerse de las picaduras de abejas e insectos comenzó a trepar ayudada por su hermano. Cuando se encontraba en lo alto de la copa del árbol, el hermano podó las ramas y una vez concluida la tarea desapareció. Al quedar sola y ver que no acudía su hermano, llamó en vano. Sus dedos se transformaron en garras curvas, de uñas afiladas, y los brazos en alas. Al tiempo, sin respuesta de su hermano al grito de "¡KAKUY, TURAY, TURAY!" y transformada en pájaro, levantó vuelo.</p>
-        
-        <p class="text-lg">La leyenda del Kakuy deja entrever dos problemáticas de honda condena social. Por un lado "las pecaminosas relaciones incestuosas" y la negación absoluta que la sociedad hace del tema. Por otro lado los conflictos, los distanciamientos entre hermanos, extendiendo los lazos de sangre a las compatibilidades culturales. En ella aparece la tragedia, como el castigo a quien no respeta las normas que cada comunidad y su fe sostienen.</p>
-      `
-    },
-    {
-      slug: 'el-crespin',
-      title: 'El Crespín',
-      content: `
-        <p class="text-lg mb-4">Dicen que Crespín tenía una hermosa mujer como esposa, que se amaban, pero ella sentía una afición incontrolable por el baile. Esta preferencia causaba peleas que desembocaron en el abandono de la mujer a su marido. Así podría bailar hasta el amanecer en cuanta "bailanta" se la invitara.</p>
-        
-        <p class="text-lg mb-4">Cierta vez tuvo noticias de una grave enfermedad de Crespín. Respondiendo a su sincero amor concurre al rancho, donde encuentra a su marido en estado delicado. Rápidamente sale a buscar a la curandera, pero en el camino encuentra un concurrido baile. No puede resistir sus ganas de danzar y se queda hasta el final.</p>
-        
-        <p class="text-lg mb-4">Cuando regresa, su esposo yace muerto. Dios la castiga, transformándola en un solitario pájaro, que va llamando incesantemente a su marido, Crespín…, Crespín…, Crespín…</p>
-        
-        <p class="text-lg">Utilizando un relato sencillo, casi ingenuo, subliminalmente dejaban el mensaje de potenciación del amor entre las parejas. Se establecía la obligación de respetar por sobre los gustos individuales, los intereses de la pareja, en respuesta al amor que los unía.</p>
-      `
-    },
-    {
-      slug: 'el-runauturungo',
-      title: 'El Runauturungo',
-      content: `
-        <p class="text-lg mb-4">Una estancia fue cierta vez alarmada por la presencia de un tigre. El peligro común reunió a sus moradores, pues la fiera andaba por la espesura cercana. Quedaba rastro de su paso: un cerco roto, un caminante herido, el sello de su garra en el fango ya seco, varias ovejas muertas, de las que ni siquiera bebió la sangre, como en abuso de crueldad.</p>
-        
-        <p class="text-lg mb-4">Todos estaban temerosos. Se convino, por fin, en la urgencia de matar al felino. Una partida de los mozos más arrojados del lugar defendería las inmediaciones de la casa, mientras que un experto intentaría matarlo. El hombre corajudo montaba su mula favorita y le acompañaba una escolta de nueve ágiles criollos, todos armados.</p>
-        
-        <p class="text-lg mb-4">Tras muchas horas de vagar sin éxito, pasó la tarde. El monte se anegó de tinieblas. Resolvieron detenerse y descansar. Habían desensillado cuando un estridente ruido repercutió en la noche. Acomodaron en las hierbas pellones, simulando con ellas alguien que duerme. Los compañeros se retiraron a esconderse. El paisano corajudo, tembloroso también por la sorpresa, corrió a ocultarse. No apagó la fogata; por el contrario, la avivó. Se oyó un nuevo grito cada vez más cercano de la fiera. Pasaron duros instantes, hasta que el cazador vio fulgurar como dos brasas los ojos del felino en la maraña oscura. El tigre avanzó sobre las prendas. El gaucho, desde la sombra le clavó su cuchillo en el costillar, pero el tigre escapó hacia el monte.</p>
-        
-        <p class="text-lg mb-4">A la mañana, montaron de nuevo y siguieron el rastro revelador. Llegaron hasta una vieja tapera, donde se amontonaban cráneos, fémures, carnes y ropas desgarradas. Silencio y soledad solemnizaban el paisaje. El cazador se detuvo a las puertas de la mansión fúnebre, cuando asomó arrastrándose con pena, una cabeza humana, cuyo cuerpo se perdía en la penumbra interior. De su pecho goteaba sangre y sus labios con palabras dolientes imploraban piedad. Luego le ofreció riquezas si le dejaba la vida, pero el cazador no se dejó tentar y descargó un trabucazo formidable sobre la cabeza, eliminando así al tan temible runauturungo.</p>
-        
-        <p class="text-lg">El relato aborda la lucha permanente del bien y el mal, representando en el runauturungo al mal que ataca a la sociedad y al cazador que logra derrotarlo es el bien, que triunfa y libera.</p>
-      `
-    },
-    {
-      slug: 'el-toro-yacu',
-      title: 'El Toro Yacu',
-      content: `
-        <p class="text-lg mb-4">Es representado por un hermoso toro negro, con cuernos de oro. Se lo concibe como un ente diabólico que, mediante un trato secreto, protege a una persona, dándole riquezas bienestar y éxitos (en el campo las riquezas están relacionadas generalmente con el ganado vacuno). Todo esto hasta el momento de la muerte, que es cuando el toro viene por lo suyo: el alma y la hacienda.</p>
-        
-        <p class="text-lg mb-4">Se dice que en el departamento Río Hondo, sobre la margen derecha del río Dulce, en la zona de las tierras movedizas, dos poderosos terratenientes que se dedicaban a la cría de ganado se alarmaron con la multiplicación de los vacunos que habían comprado a un forastero; indagaron y descubrieron que se debía a un toro con astas doradas que aparecía en las noches de luna llena en una aguada, a la que dieron el nombre de "Toro Yacu" (aguada del toro). El animal fantástico atraía a las vacas y se apareaba con ellas, pero la carne de los animales que surgían de esa unión era desagradable al paladar.</p>
-        
-        <p class="text-lg mb-4">Cierto día, un criollo de la zona se propuso enlazar al toro de las astas doradas. Sorprendentemente, ese mismo día se presentó el forastero que había vendido las vacas a los paisanos. Apostó a viva voz que era imposible enlazar al toro. El criollo aceptó el desafío. Esperó la luna llena y salió hacia la aguada.</p>
-        
-        <p class="text-lg mb-4">Tras muchos intentos, logró enlazarlo y arrastrarlo hasta la orilla. Pero el toro cortó el lazo y huyó, llevando tras de sí la hacienda del vecindario. En su huida hundió sus astas en el tronco de un tala, de donde salió un chorro de agua que bebió.</p>
-        
-        <p class="text-lg mb-4">Luego de ese episodio, se lo vio solamente un par de veces más y desapareció como por arte de magia, llevando consigo a las vacas mestizas y a sus descendientes.</p>
-        
-        <p class="text-lg mb-4">Dice la gente del lugar que el toro era una manifestación del mal y que fue el mismo diablo el forastero que vendió las vacas a los terratenientes y que desafió al criollo a enlazarlo.</p>
-        
-        <p class="text-lg">El bien, logró ahuyentar al mal. El toro nunca más apareció. Sólo queda la leyenda, ya que las aguadas se fueron secando misteriosamente.</p>
-      `
-    },
-    {
-      slug: 'la-telesita',
-      title: 'La Telesita',
-      content: `
-        <p class="text-lg mb-4">La historia habla de una niña llamada Telésfora Castillo "Telesita", huérfana y un poco atormentada buscó refugio en el espeso monte. Sólo se acercaba al pueblo cuando sentía el sonar de las guitarras o alguna algarabía de fiesta. Era allí cuando reaparecía, sonriente y dispuesta a divertirse bailando hasta el amanecer si fuera posible.</p>
-        
-        <p class="text-lg mb-4">Pero una noche de gran alegría, entre chacareras y zambas cayó al encendido fuego, donde ardientes llamas consumieron su raído vestido y carnes flacas, encontrando la muerte sin que nadie pudiera ayudarla.</p>
-        
-        <p class="text-lg mb-4">Conocida en toda la provincia como alma milagrosa, es invocada en épocas críticas para los campesinos, para pedir pasto y agua para la hacienda. La ofrenda consiste en un gran baile y banquete (telesiada), en el cual el promesante baila siete chacareras seguidas y bebe siete copas de caña, rogando envíe el agua que no tuvo para apagar su cuerpo calcinado.</p>
-        
-        <p class="text-lg italic">"Que venga la Telesita en Alma de Rezabaile y junto a ella seguramente viene la lluvia que tanto imploran los montes santiagueños".</p>
-      `
-    },
-    {
-      slug: 'el-supay',
-      title: 'El Supay',
-      content: `
-        <p class="text-lg mb-4">En nuestra tradición, Supay es el genio del mal. Es conocido desde la civilización de los Incas y se lo relaciona con las brujas y la Salamanca (especie de academia donde se enseñan cátedras diabólicas).</p>
-        
-        <p class="text-lg mb-4">El Supay es muy temido y tiene una singular capacidad metamorfósica, es decir adopta distintas formas para manifestarse. Puede aparecerse como un viento llamado Huayra Muyoj, originado en el choque de dos corrientes de aire que promueven un remolino, el que pareciera venir desde la espesura del monte atravesando todo lo que encuentra a su paso.</p>
-        
-        <p class="text-lg">Por ello cuando sopla el viento se oye decir a las mujeres temerosas, ¡Cruz! ¡Cruz! ¡Cruz! pidiéndole a Dios que el maléfico remolino tuerza su rumbo.</p>
-      `
-    },
-    {
-      slug: 'la-almamula',
-      title: 'La Almamula',
-      content: `
-        <p class="text-lg mb-4">Conocida como Almamula, o también Mulánima ("Mula Ánima"), refiere a una mujer que cometió incesto o bien tuvo relaciones amorosas con un cura, no arrepintiéndose de ello. En castigo a esta conducta, Dios la habría convertido en una mula que arrastra unas pesadas cadenas.</p>
-        
-        <p class="text-lg mb-4">Se dice que ella vaga por las noches en lo espeso de los montes y recorre los alrededores de las poblaciones en días de tormenta. La acompaña el crujir de su freno de oro y de tanto en tanto lanza un triste rebuzno, da gritos de dolor, echa fuego por la nariz y la boca y destellos por los ojos, estremeciendo a los que lo escuchan. Arrastra también pesadas cadenas, como otros seres condenados.</p>
-        
-        <p class="text-lg">La leyenda del almamula es la configuración sobrenatural del pecado. La necesidad de impartir enseñanzas de convivencia, ligadas a las concepciones religiosas, han simulado en este cuento un ejemplo del castigo o de condena social, que recae en aquellos que osan transgredir las costumbres heredadas.</p>
-      `
-    }
+    { slug: 'el-sachayoj', title: 'El Sachayoj' },
+    { slug: 'la-mayu-maman', title: 'La Mayu Maman' },
+    { slug: 'el-pampayoj', title: 'El Pampayoj' },
+    { slug: 'la-uritu-orko', title: 'La Uritu Orko' },
+    { slug: 'la-salamanca', title: 'La Salamanca' },
+    { slug: 'el-kakuy', title: 'El Kakuy' },
+    { slug: 'el-crespin', title: 'El Crespín' },
+    { slug: 'el-runauturungo', title: 'El Runauturungo' },
+    { slug: 'el-toro-yacu', title: 'El Toro Yacu' },
+    { slug: 'la-telesita', title: 'La Telesita' },
+    { slug: 'el-supay', title: 'El Supay' },
+    { slug: 'la-almamula', title: 'La Almamula' }
   ];
 
   return mitos.map(mito => ({
@@ -168,12 +26,32 @@ export async function getStaticPaths() {
 }
 
 const { mito } = Astro.props;
+
+// Leer contenido del archivo
+let contenido = { historia: '', historieta: '', guion: '' };
+try {
+  const filePath = join(process.cwd(), 'contenido', `${mito.slug}-completo.md`);
+  const fileContent = readFileSync(filePath, 'utf-8');
+  
+  // Parsear secciones
+  const historiaMatch = fileContent.match(/## Historia Completa\n\n([\s\S]*?)(?=\n## Historieta|$)/);
+  const historietaMatch = fileContent.match(/## Historieta\n\n([\s\S]*?)(?=\n## Guion|$)/);
+  const guionMatch = fileContent.match(/## Guion para Corto[^\n]*\n\n([\s\S]*?)$/);
+  
+  contenido = {
+    historia: historiaMatch ? historiaMatch[1].trim() : '',
+    historieta: historietaMatch ? historietaMatch[1].trim() : '',
+    guion: guionMatch ? guionMatch[1].trim() : ''
+  };
+} catch (e) {
+  console.error('Error leyendo archivo:', e);
+}
 ---
 
-<Layout title={mito.title} description={`Leyenda de ${mito.title} - Mitos y leyendas de Santiago del Estero`}>
-  <article class="max-w-3xl mx-auto">
+<Layout title={mito.title} description={`Leyenda de ${mito.title} - Historia, historieta y guión cinematográfico`}>
+  <article class="max-w-4xl mx-auto">
     <!-- Back link -->
-    <a href="/" class="inline-flex items-center text-orange-600 hover:text-orange-700 mb-8">
+    <a href="/" class="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors">
       <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
       </svg>
@@ -181,9 +59,9 @@ const { mito } = Astro.props;
     </a>
 
     <!-- Header -->
-    <header class="mb-10">
+    <header class="mb-8">
       <span class="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-4">
-        Leyenda
+        Leyenda Santiagueña
       </span>
       <h1 class="text-4xl md:text-5xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-4">
         {mito.title}
@@ -191,16 +69,98 @@ const { mito } = Astro.props;
       <div class="h-1 w-24 bg-orange-500 rounded"></div>
     </header>
 
-    <!-- Content -->
-    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed" set:html={mito.content} />
+    <!-- Tabs -->
+    <div class="mb-8">
+      <div class="flex border-b border-slate-200">
+        <button id="tab-historia" class="tab-btn px-6 py-3 text-sm font-medium text-orange-600 border-b-2 border-orange-600 bg-orange-50/50" onclick="switchTab('historia')">
+          📖 Historia
+        </button>
+        <button id="tab-historieta" class="tab-btn px-6 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('historieta')">
+          🎨 Historieta
+        </button>
+        <button id="tab-guion" class="tab-btn px-6 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('guion')">
+          🎬 Guión
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab Content -->
+    <div id="content-historia" class="tab-content">
+      <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed">
+        {contenido.historia.split('\n\n').map((parrafo) => (
+          <p class="mb-4 text-lg leading-relaxed">{parrafo}</p>
+        ))}
+      </div>
+    </div>
+
+    <div id="content-historieta" class="tab-content hidden">
+      <div class="space-y-8">
+        {contenido.historieta.split('### Escena').filter(Boolean).map((escena, i) => {
+          const lines = escena.trim().split('\n');
+          const titulo = lines[0]?.replace(':', '').trim() || `Escena ${i + 1}`;
+          const descripcion = lines.find(l => l.trim() && !l.includes('**'))?.trim() || '';
+          const dialogo = lines.find(l => l.includes('Diálogo:'))?.replace('**Diálogo:**', '').trim() || '';
+          const prompt = lines.find(l => l.includes('Prompt:'))?.replace('**Prompt:**', '').trim() || '';
+          
+          return (
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="text-xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-3">
+                Escena {i + 1}: {titulo}
+              </h3>
+              <p class="text-slate-700 mb-4">{descripcion}</p>
+              {dialogo && (
+                <div class="bg-white rounded-lg p-4 mb-4 border-l-4 border-orange-500">
+                  <p class="text-sm text-slate-500 mb-1">Diálogo:</p>
+                  <p class="text-slate-800 italic">{dialogo}</p>
+                </div>
+              )}
+              {prompt && (
+                <div class="bg-orange-50 rounded-lg p-4">
+                  <p class="text-sm text-orange-600 font-medium mb-2">🎨 Prompt para IA:</p>
+                  <code class="text-xs text-slate-700 block break-words">{prompt}</code>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    <div id="content-guion" class="tab-content hidden">
+      <div class="bg-slate-900 text-slate-100 rounded-xl p-6 font-mono text-sm overflow-x-auto">
+        <pre class="whitespace-pre-wrap">{contenido.guion}</pre>
+      </div>
+    </div>
 
     <!-- Source -->
     <div class="mt-12 pt-8 border-t border-slate-200">
       <p class="text-sm text-slate-500">
-        <strong>Fuente:</strong> <a href="https://ccbsantiago.gob.ar/creencias-populares-santiaguenas-mitos-y-leyendas/" class="text-orange-600 hover:underline" target="_blank" rel="noopener">
+        <strong>Fuente original:</strong>{' '}
+        <a href="https://ccbsantiago.gob.ar/creencias-populares-santiaguenas-mitos-y-leyendas/" class="text-orange-600 hover:underline" target="_blank" rel="noopener">
           Centro Cultural del Bicentenario - Santiago del Estero
         </a>
       </p>
+      <p class="text-xs text-slate-400 mt-2">
+        Contenido ampliado y adaptado con narrativa completa, historieta y guión cinematográfico.
+      </p>
     </div>
   </article>
+
+  <script is:inline>
+    function switchTab(tabName) {
+      // Hide all content
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById('content-' + tabName).classList.remove('hidden');
+      
+      // Reset all tabs
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('text-orange-600', 'border-orange-600', 'bg-orange-50/50');
+        btn.classList.add('text-slate-600', 'border-transparent');
+      });
+      
+      // Activate selected tab
+      document.getElementById('tab-' + tabName).classList.remove('text-slate-600', 'border-transparent');
+      document.getElementById('tab-' + tabName).classList.add('text-orange-600', 'border-orange-600', 'bg-orange-50/50');
+    }
+  </script>
 </Layout>

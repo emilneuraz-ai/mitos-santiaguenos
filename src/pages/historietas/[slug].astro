@@ -6,6 +6,10 @@ export async function getStaticPaths() {
     {
       slug: 'el-sachayoj',
       title: 'El Sachayoj',
+      imagenes: [
+        '/historietas/sachayoj-escena1---7aa97b2e-1188-42ca-a9a0-34930d2cc75a.jpg',
+        '/historietas/sachayoj-escena2---0aafa382-170b-4da0-9165-b85868d3e438.jpg'
+      ],
       relato: `
         <p class="text-lg mb-4">Don Aniceto caminaba por el monte desde antes de que el sol asomara. Llevaba su hacha afilada colgando del cinto y buscaba un quebracho blanco joven, uno de esos pimpollos que crecen rectos y fuertes, perfectos para reparar el techo de su rancho.</p>
         
@@ -35,6 +39,10 @@ export async function getStaticPaths() {
     {
       slug: 'la-mayu-maman',
       title: 'La Mayu Maman',
+      imagenes: [
+        '/historietas/mayumaman-escena1---049bd279-b87d-4d96-8121-b13ca4cde366.jpg',
+        '/historietas/mayumaman-escena2---d746c71d-c997-409b-abc2-a42e3499e50d.jpg'
+      ],
       relato: `
         <p class="text-lg mb-4">Juan Cruz era pescador desde que tenía memoria. Conocía cada remanso del río Dulce, cada piedra donde las bogas se escondían, cada correntada que podía arrastrar una canoa. Pero aquella tarde de verano, el río estaba extraño. Las aguas, usualmente claras, brillaban con un tono dorado que nunca había visto.</p>
         
@@ -64,6 +72,10 @@ export async function getStaticPaths() {
     {
       slug: 'el-pampayoj',
       title: 'El Pampayoj',
+      imagenes: [
+        '/historietas/pampayoj-escena1---0ec28b7a-7677-4fc5-bd7d-49a5c7ece636.jpg',
+        '/historietas/pampayoj-escena2---efd2e0f2-21eb-45d9-9dd8-86ef22aa6769.jpg'
+      ],
       relato: `
         <p class="text-lg mb-4">El cazador llegó a la llanura con su rifle y su machete. Era domingo, y la reglamentación no permitía cazar en domingo, pero a él no le importaba. Había oído que en estas pampas vivían corzuelas gordas y quirquinchos de buen tamaño.</p>
         <p class="text-lg mb-4">Empezó temprano. Una corzuela, dos, tres. Las abría con el machete para ver si tenían grasa suficiente. Si no era así, las dejaba abandonadas en el pasto y seguía caminando. Un quirquincho, otro, un pichi. Todos abiertos, todos inspeccionados, todos desechados.</p>
@@ -137,6 +149,17 @@ const { historieta } = Astro.props;
             </div>
             
             <p class="text-slate-600 mb-6">{escena.descripcion}</p>
+            
+            <!-- Imagen generada -->
+            {historieta.imagenes && historieta.imagenes[index] && (
+              <div class="mb-4">
+                <img 
+                  src={historieta.imagenes[index]} 
+                  alt={escena.titulo}
+                  class="w-full rounded-xl shadow-lg"
+                />
+              </div>
+            )}
             
             <div class="bg-slate-50 rounded-xl p-4">
               <div class="flex items-center justify-between mb-3">
