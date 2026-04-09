@@ -3,34 +3,76 @@ import Layout from '../layouts/Layout.astro';
 
 const mitos = [
   {
-    title: "La Telesita",
-    description: "La bailarina que murió de sed y fuego en el monte santiagueño",
+    title: "El Sachayoj",
+    description: "El Dios protector de los bosques. Viejo canoso que cuida el monte y castiga a quienes destruyen la naturaleza.",
     category: "Leyenda",
-    slug: "la-telesita"
+    slug: "el-sachayoj"
+  },
+  {
+    title: "La Mayu Maman",
+    description: "La sirena de nuestros ríos. Hermosa mujer rubia que peina su cabellera con peine de oro y arrastra a los hombres al agua.",
+    category: "Leyenda",
+    slug: "la-mayu-maman"
+  },
+  {
+    title: "El Pampayoj",
+    description: "Dueño y señor de las llanuras. Protege la fauna y castiga la caza furtiva. Aparece como jinete, avestruz o guanaco.",
+    category: "Leyenda",
+    slug: "el-pampayoj"
+  },
+  {
+    title: "La Uritu Orko",
+    description: "Mujer sentada en la cumbre de una roca. Personifica la tragedia de quienes desconocen el peligro de las serranías.",
+    category: "Leyenda",
+    slug: "la-uritu-orko"
+  },
+  {
+    title: "La Salamanca",
+    description: "Lugar oculto entre los breñales donde el Diablo enseña sus artes. Aquelarres, música y orgías en la oscuridad.",
+    category: "Leyenda",
+    slug: "la-salamanca"
   },
   {
     title: "El Kakuy",
-    description: "El hombre pájaro que vive en lo profundo del monte",
-    category: "Mito",
+    description: "Pájaro que fue mujer. Castigada por su crueldad hacia su hermano, vaga llamando incesantemente '¡Kakuy, turay, turay!'",
+    category: "Leyenda",
     slug: "el-kakuy"
   },
   {
     title: "El Crespín",
-    description: "El duende de la suerte que habita en las casas santiagueñas",
+    description: "Mujer transformada en pájaro por abandonar a su esposo moribundo. Llama incesantemente 'Crespín... Crespín...'",
     category: "Leyenda",
     slug: "el-crespin"
   },
   {
-    title: "La Dama de Blanco",
-    description: "El alma en pena que vaga por las calles del centro histórico",
+    title: "El Runauturungo",
+    description: "Tigre demoníaco que aterrorizaba las estancias. El bien triunfa sobre el mal cuando el cazador lo derrota.",
     category: "Leyenda",
-    slug: "la-dama-de-blanco"
+    slug: "el-runauturungo"
   },
   {
-    title: "El Nahuelito",
-    description: "La criatura acuática que habita en las profundidades del río Dulce",
-    category: "Mito",
-    slug: "el-nahuelito"
+    title: "El Toro Yacu",
+    description: "Toro negro con cuernos de oro. Manifestación del mal que protege riquezas a cambio del alma.",
+    category: "Leyenda",
+    slug: "el-toro-yacu"
+  },
+  {
+    title: "La Telesita",
+    description: "Niña huérfana que murió quemada bailando. Alma milagrosa invocada para pedir lluvia en épocas de sequía.",
+    category: "Leyenda",
+    slug: "la-telesita"
+  },
+  {
+    title: "El Supay",
+    description: "Genio del mal con capacidad metamorfósica. Se manifiesta como viento Huayra Muyoj o en la Salamanca.",
+    category: "Leyenda",
+    slug: "el-supay"
+  },
+  {
+    title: "La Almamula",
+    description: "Mula que fue mujer. Castigada por incesto o relaciones con curas, vaga con cadenas echando fuego por los ojos.",
+    category: "Leyenda",
+    slug: "la-almamula"
   }
 ];
 ---
@@ -50,9 +92,9 @@ const mitos = [
     </h1>
     
     <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
-      Descubre las fascinantes historias que han pasado de generación en generación 
-      en <span class="text-orange-600 font-medium">Santiago del Estero</span>. Leyendas de amor, terror, 
-      magia y misterio que forman parte del rico folclore santiagueño.
+      Creencias populares, mitos y leyendas transmitidos de generación en generación 
+      en <span class="text-orange-600 font-medium">Santiago del Estero</span>. 
+      Relatos del <a href="https://ccbsantiago.gob.ar/creencias-populares-santiaguenas-mitos-y-leyendas/" class="text-orange-600 hover:underline" target="_blank" rel="noopener">CCB Santiago</a>.
     </p>
     
     <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -68,15 +110,15 @@ const mitos = [
   <!-- Stats -->
   <section class="grid grid-cols-3 gap-8 mb-16 py-8 border-y border-slate-200">
     <div class="text-center">
-      <div class="text-4xl font-bold text-slate-900 font-['DM_Serif_Display']">5</div>
-      <div class="text-sm text-slate-500 mt-1">Mitos</div>
+      <div class="text-4xl font-bold text-slate-900 font-['DM_Serif_Display']">12</div>
+      <div class="text-sm text-slate-500 mt-1">Leyendas</div>
     </div>
     <div class="text-center">
-      <div class="text-4xl font-bold text-slate-900 font-['DM_Serif_Display']">10</div>
+      <div class="text-4xl font-bold text-slate-900 font-['DM_Serif_Display']">24</div>
       <div class="text-sm text-slate-500 mt-1">Escenas</div>
     </div>
     <div class="text-center">
-      <div class="text-4xl font-bold text-slate-900 font-['DM_Serif_Display']">30</div>
+      <div class="text-4xl font-bold text-slate-900 font-['DM_Serif_Display']">36</div>
       <div class="text-sm text-slate-500 mt-1">Prompts</div>
     </div>
   </section>
@@ -94,7 +136,7 @@ const mitos = [
           class="myth-card block bg-white rounded-2xl p-6 group"
         >
           <div class="flex items-start justify-between mb-4">
-            <span class="text-xs font-medium px-3 py-1 rounded-full bg-slate-100 text-slate-600">
+            <span class="text-xs font-medium px-3 py-1 rounded-full bg-orange-100 text-orange-700">
               {mito.category}
             </span>
             <span class="text-2xl font-bold text-slate-200 font-['DM_Serif_Display']">

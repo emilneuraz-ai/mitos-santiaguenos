@@ -3,157 +3,204 @@ import Layout from '../../layouts/Layout.astro';
 
 export async function getStaticPaths() {
   const mitos = [
-    'la-telesita',
-    'el-kakuy', 
-    'el-crespin',
-    'la-dama-de-blanco',
-    'el-nahuelito'
+    {
+      slug: 'el-sachayoj',
+      title: 'El Sachayoj',
+      content: `
+        <p class="text-lg mb-4">Es el "Dios protector de los bosques", donde habita. Se dice que detiene el brazo del hachero cuando éste se inclina para destruir los quebrachos pimpollos o los algarrobos jóvenes que no han terminado de desarrollarse. Cuida las riquezas de los montes y aparece solo cuando sus dominios están siendo arrasados, cuando talan sin consideración las especies sin retoño o cuando sacan con fuego la miel de las lechiguanas.</p>
+        
+        <p class="text-lg mb-4">Lo representan como un viejo canoso. Su larga cabellera son lazos de lokontiy, sus barbas, también largas y blancas son de sajasta. Camina descalzo pero las espinas no lo hieren, jamás deja huellas, su consistencia es como la del humo y solo se le anticipa un remolino en forma de advertencia. Galopa por los montes soplando su tradicional corneta hecha de cuerno de chivo.</p>
+        
+        <p class="text-lg mb-4 italic">"Hay que hacerle caso porque de lo contrario hace morir de sed o de desesperación al no encontrar la senda o la picada para regresar al rancho".</p>
+        
+        <p class="text-lg">La mitificación del Sachayoj es la respuesta a la necesidad de preservar el monte, su flora y su fauna, evitando la destrucción que pueden ocasionar la caza furtiva o la tala de las especies.</p>
+      `
+    },
+    {
+      slug: 'la-mayu-maman',
+      title: 'La Mayu Maman',
+      content: `
+        <p class="text-lg mb-4">Inmortalizada en el pueblo santiagueño como la sirena de nuestros ríos. Su nombre en quichua está compuesto por dos vocablos: <em>mayu</em> (río) y <em>mama</em> (madre), agregando la "n" final (posesivo: su, de el o ella), lo que se interpreta como la madre del río.</p>
+        
+        <p class="text-lg mb-4">La leyenda cuenta que suele aparecer en forma de una hermosa mujer rubia que peina su cabellera con un peine de oro. Hermosa y cautivante, atrae a los hombres y si éstos se le acercan los abraza y se hunde con ellos en el agua.</p>
+        
+        <p class="text-lg">La difícil comprensión del concepto de riesgo, de peligrosidad de los ríos santiagueños; como así también la preservación de este recurso, se resuelve en esta historia que conjuga hombres, geografía y componentes sobrenaturales, otorgándole a la humanidad, la conciencia de límites.</p>
+      `
+    },
+    {
+      slug: 'el-pampayoj',
+      title: 'El Pampayoj',
+      content: `
+        <p class="text-lg mb-4">Su figura representativa es mutante y protege la fauna, evitando la caza a destajo. A veces como un jinete a caballo, o como un avestruz o un guanaco, el "Pampayoj" deambula por las zonas llanas del centro de la provincia, protegiendo a los animales de la caza furtiva, lo que desata su ira.</p>
+        
+        <p class="text-lg mb-4">Cuenta la leyenda que una vez un cazador empezó a matar cuanto animal se le cruzare en el camino; quirquinchos, pichis, corzuelas que abría con un cuchillo para constatar si eran gordos y carnosos. Si no los eran, los desechaba a su paso y proseguía su marcha. Ensimismado en su tarea no advirtió la presencia del Pampayoj que lo apresó y le colgó el caballo de un árbol, a los que tuvo bastante tiempo hasta que el hombre comprendió lo malo que hacía "al desperdiciar comida".</p>
+        
+        <p class="text-lg">La leyenda hace hincapié en una advertencia al hombre que no debe cazar por vicio, gusto o diversión; la caza está reservada solamente para proveerse de alimentos.</p>
+      `
+    },
+    {
+      slug: 'la-uritu-orko',
+      title: 'La Uritu Orko',
+      content: `
+        <p class="text-lg mb-4">Su nombre en quichua significa "cerro de la cotorra". Según la leyenda un hombre con su esposa e hijo fueron a una serranía en busca de loros y catitas. Ya en la cumbre y junto a una barranca, el hombre se ató una cuerda a la cintura, la que era sostenida por su mujer.</p>
+        
+        <p class="text-lg mb-4">Atenta a las indicaciones del marido, la mujer desatendió la vigilancia del niño quien se acercaba a un precipicio. La mujer soltó la cuerda que sujetaba a su marido, dejándolo caer al abismo y corrió intentando salvar a su hijo, sin conseguirlo.</p>
+        
+        <p class="text-lg mb-4">De allí que se la personifica como una mujer sentada en la solitaria cumbre de una roca, evocando su aciago destino.</p>
+        
+        <p class="text-lg">La leyenda, en busca de una enseñanza, asume lo trágico y definitivo como esencia del relato, señalando el riesgo y destacando la peligrosidad que encierran las serranías de la región, especialmente para los niños y para aquellos que desconocen el terreno.</p>
+      `
+    },
+    {
+      slug: 'la-salamanca',
+      title: 'La Salamanca',
+      content: `
+        <p class="text-lg mb-4">Es un lugar oculto entre los breñales, de difícil acceso, diabólico, donde el Diablo (Supay) enseña sus artes y acuden los que se inician en la práctica del maleficio o los que van a aprender toda suerte de maña, destreza o habilidad para destacarse en la pelea, en el amor o en el trabajo. Allí se baila, se hace música, se celebran aquelarres (conciliábulo nocturno entre brujos) y orgías. A la entrada existe un Cristo cabeza abajo al que hay que pegar y escupir, más adelante se ven animales repugnantes y asquerosos: arañas peludas, sapos, escuerzos, víboras, etc.</p>
+        
+        <p class="text-lg mb-4">Luego de ser sometido a varias pruebas, si el visitante resulta vencedor, puede pedir lo que quiera. Caso contrario se vuelve loco al salir.</p>
+        
+        <p class="text-lg mb-4">En la Salamanca se vive en eterno jolgorio. Las brujas y los brujos se regodean allí en lujurioso frenesí. Allí se canta, se baila, se encuentra toda clase de placer.</p>
+        
+        <p class="text-lg mb-4">Se dice que la música solo deja de sonar cuando alguien se arrima a la cueva, y que los animales que pasan cerca se espantan y huyen despavoridos.</p>
+        
+        <p class="text-lg">El mito de la cueva, el laberinto y el centro de la tierra (lo desconocido), aparecen asociados a la terrenal búsqueda del poder y la sabiduría, a la que el individuo suele abocarse sin valorar la esencia misma de su ser.</p>
+      `
+    },
+    {
+      slug: 'el-kakuy',
+      title: 'El Kakuy',
+      content: `
+        <p class="text-lg mb-4">Cuenta la historia acerca de una pareja de hermanos que vivían solos en el bosque. El hermano varón le prodigaba a su hermana tanta ternura y cuidado, que nunca se conoció mayor afecto fraterno. Los mejores frutos, flores, miel, carne de sus animales predilectos y peces eran para ella, mientras ésta le prodigaba el trato más cruel.</p>
+        
+        <p class="text-lg mb-4">Cansado de tanto tormento, un día la invitó al bosque a comer miel. Cubierta la cabeza con una manta para protegerse de las picaduras de abejas e insectos comenzó a trepar ayudada por su hermano. Cuando se encontraba en lo alto de la copa del árbol, el hermano podó las ramas y una vez concluida la tarea desapareció. Al quedar sola y ver que no acudía su hermano, llamó en vano. Sus dedos se transformaron en garras curvas, de uñas afiladas, y los brazos en alas. Al tiempo, sin respuesta de su hermano al grito de "¡KAKUY, TURAY, TURAY!" y transformada en pájaro, levantó vuelo.</p>
+        
+        <p class="text-lg">La leyenda del Kakuy deja entrever dos problemáticas de honda condena social. Por un lado "las pecaminosas relaciones incestuosas" y la negación absoluta que la sociedad hace del tema. Por otro lado los conflictos, los distanciamientos entre hermanos, extendiendo los lazos de sangre a las compatibilidades culturales. En ella aparece la tragedia, como el castigo a quien no respeta las normas que cada comunidad y su fe sostienen.</p>
+      `
+    },
+    {
+      slug: 'el-crespin',
+      title: 'El Crespín',
+      content: `
+        <p class="text-lg mb-4">Dicen que Crespín tenía una hermosa mujer como esposa, que se amaban, pero ella sentía una afición incontrolable por el baile. Esta preferencia causaba peleas que desembocaron en el abandono de la mujer a su marido. Así podría bailar hasta el amanecer en cuanta "bailanta" se la invitara.</p>
+        
+        <p class="text-lg mb-4">Cierta vez tuvo noticias de una grave enfermedad de Crespín. Respondiendo a su sincero amor concurre al rancho, donde encuentra a su marido en estado delicado. Rápidamente sale a buscar a la curandera, pero en el camino encuentra un concurrido baile. No puede resistir sus ganas de danzar y se queda hasta el final.</p>
+        
+        <p class="text-lg mb-4">Cuando regresa, su esposo yace muerto. Dios la castiga, transformándola en un solitario pájaro, que va llamando incesantemente a su marido, Crespín…, Crespín…, Crespín…</p>
+        
+        <p class="text-lg">Utilizando un relato sencillo, casi ingenuo, subliminalmente dejaban el mensaje de potenciación del amor entre las parejas. Se establecía la obligación de respetar por sobre los gustos individuales, los intereses de la pareja, en respuesta al amor que los unía.</p>
+      `
+    },
+    {
+      slug: 'el-runauturungo',
+      title: 'El Runauturungo',
+      content: `
+        <p class="text-lg mb-4">Una estancia fue cierta vez alarmada por la presencia de un tigre. El peligro común reunió a sus moradores, pues la fiera andaba por la espesura cercana. Quedaba rastro de su paso: un cerco roto, un caminante herido, el sello de su garra en el fango ya seco, varias ovejas muertas, de las que ni siquiera bebió la sangre, como en abuso de crueldad.</p>
+        
+        <p class="text-lg mb-4">Todos estaban temerosos. Se convino, por fin, en la urgencia de matar al felino. Una partida de los mozos más arrojados del lugar defendería las inmediaciones de la casa, mientras que un experto intentaría matarlo. El hombre corajudo montaba su mula favorita y le acompañaba una escolta de nueve ágiles criollos, todos armados.</p>
+        
+        <p class="text-lg mb-4">Tras muchas horas de vagar sin éxito, pasó la tarde. El monte se anegó de tinieblas. Resolvieron detenerse y descansar. Habían desensillado cuando un estridente ruido repercutió en la noche. Acomodaron en las hierbas pellones, simulando con ellas alguien que duerme. Los compañeros se retiraron a esconderse. El paisano corajudo, tembloroso también por la sorpresa, corrió a ocultarse. No apagó la fogata; por el contrario, la avivó. Se oyó un nuevo grito cada vez más cercano de la fiera. Pasaron duros instantes, hasta que el cazador vio fulgurar como dos brasas los ojos del felino en la maraña oscura. El tigre avanzó sobre las prendas. El gaucho, desde la sombra le clavó su cuchillo en el costillar, pero el tigre escapó hacia el monte.</p>
+        
+        <p class="text-lg mb-4">A la mañana, montaron de nuevo y siguieron el rastro revelador. Llegaron hasta una vieja tapera, donde se amontonaban cráneos, fémures, carnes y ropas desgarradas. Silencio y soledad solemnizaban el paisaje. El cazador se detuvo a las puertas de la mansión fúnebre, cuando asomó arrastrándose con pena, una cabeza humana, cuyo cuerpo se perdía en la penumbra interior. De su pecho goteaba sangre y sus labios con palabras dolientes imploraban piedad. Luego le ofreció riquezas si le dejaba la vida, pero el cazador no se dejó tentar y descargó un trabucazo formidable sobre la cabeza, eliminando así al tan temible runauturungo.</p>
+        
+        <p class="text-lg">El relato aborda la lucha permanente del bien y el mal, representando en el runauturungo al mal que ataca a la sociedad y al cazador que logra derrotarlo es el bien, que triunfa y libera.</p>
+      `
+    },
+    {
+      slug: 'el-toro-yacu',
+      title: 'El Toro Yacu',
+      content: `
+        <p class="text-lg mb-4">Es representado por un hermoso toro negro, con cuernos de oro. Se lo concibe como un ente diabólico que, mediante un trato secreto, protege a una persona, dándole riquezas bienestar y éxitos (en el campo las riquezas están relacionadas generalmente con el ganado vacuno). Todo esto hasta el momento de la muerte, que es cuando el toro viene por lo suyo: el alma y la hacienda.</p>
+        
+        <p class="text-lg mb-4">Se dice que en el departamento Río Hondo, sobre la margen derecha del río Dulce, en la zona de las tierras movedizas, dos poderosos terratenientes que se dedicaban a la cría de ganado se alarmaron con la multiplicación de los vacunos que habían comprado a un forastero; indagaron y descubrieron que se debía a un toro con astas doradas que aparecía en las noches de luna llena en una aguada, a la que dieron el nombre de "Toro Yacu" (aguada del toro). El animal fantástico atraía a las vacas y se apareaba con ellas, pero la carne de los animales que surgían de esa unión era desagradable al paladar.</p>
+        
+        <p class="text-lg mb-4">Cierto día, un criollo de la zona se propuso enlazar al toro de las astas doradas. Sorprendentemente, ese mismo día se presentó el forastero que había vendido las vacas a los paisanos. Apostó a viva voz que era imposible enlazar al toro. El criollo aceptó el desafío. Esperó la luna llena y salió hacia la aguada.</p>
+        
+        <p class="text-lg mb-4">Tras muchos intentos, logró enlazarlo y arrastrarlo hasta la orilla. Pero el toro cortó el lazo y huyó, llevando tras de sí la hacienda del vecindario. En su huida hundió sus astas en el tronco de un tala, de donde salió un chorro de agua que bebió.</p>
+        
+        <p class="text-lg mb-4">Luego de ese episodio, se lo vio solamente un par de veces más y desapareció como por arte de magia, llevando consigo a las vacas mestizas y a sus descendientes.</p>
+        
+        <p class="text-lg mb-4">Dice la gente del lugar que el toro era una manifestación del mal y que fue el mismo diablo el forastero que vendió las vacas a los terratenientes y que desafió al criollo a enlazarlo.</p>
+        
+        <p class="text-lg">El bien, logró ahuyentar al mal. El toro nunca más apareció. Sólo queda la leyenda, ya que las aguadas se fueron secando misteriosamente.</p>
+      `
+    },
+    {
+      slug: 'la-telesita',
+      title: 'La Telesita',
+      content: `
+        <p class="text-lg mb-4">La historia habla de una niña llamada Telésfora Castillo "Telesita", huérfana y un poco atormentada buscó refugio en el espeso monte. Sólo se acercaba al pueblo cuando sentía el sonar de las guitarras o alguna algarabía de fiesta. Era allí cuando reaparecía, sonriente y dispuesta a divertirse bailando hasta el amanecer si fuera posible.</p>
+        
+        <p class="text-lg mb-4">Pero una noche de gran alegría, entre chacareras y zambas cayó al encendido fuego, donde ardientes llamas consumieron su raído vestido y carnes flacas, encontrando la muerte sin que nadie pudiera ayudarla.</p>
+        
+        <p class="text-lg mb-4">Conocida en toda la provincia como alma milagrosa, es invocada en épocas críticas para los campesinos, para pedir pasto y agua para la hacienda. La ofrenda consiste en un gran baile y banquete (telesiada), en el cual el promesante baila siete chacareras seguidas y bebe siete copas de caña, rogando envíe el agua que no tuvo para apagar su cuerpo calcinado.</p>
+        
+        <p class="text-lg italic">"Que venga la Telesita en Alma de Rezabaile y junto a ella seguramente viene la lluvia que tanto imploran los montes santiagueños".</p>
+      `
+    },
+    {
+      slug: 'el-supay',
+      title: 'El Supay',
+      content: `
+        <p class="text-lg mb-4">En nuestra tradición, Supay es el genio del mal. Es conocido desde la civilización de los Incas y se lo relaciona con las brujas y la Salamanca (especie de academia donde se enseñan cátedras diabólicas).</p>
+        
+        <p class="text-lg mb-4">El Supay es muy temido y tiene una singular capacidad metamorfósica, es decir adopta distintas formas para manifestarse. Puede aparecerse como un viento llamado Huayra Muyoj, originado en el choque de dos corrientes de aire que promueven un remolino, el que pareciera venir desde la espesura del monte atravesando todo lo que encuentra a su paso.</p>
+        
+        <p class="text-lg">Por ello cuando sopla el viento se oye decir a las mujeres temerosas, ¡Cruz! ¡Cruz! ¡Cruz! pidiéndole a Dios que el maléfico remolino tuerza su rumbo.</p>
+      `
+    },
+    {
+      slug: 'la-almamula',
+      title: 'La Almamula',
+      content: `
+        <p class="text-lg mb-4">Conocida como Almamula, o también Mulánima ("Mula Ánima"), refiere a una mujer que cometió incesto o bien tuvo relaciones amorosas con un cura, no arrepintiéndose de ello. En castigo a esta conducta, Dios la habría convertido en una mula que arrastra unas pesadas cadenas.</p>
+        
+        <p class="text-lg mb-4">Se dice que ella vaga por las noches en lo espeso de los montes y recorre los alrededores de las poblaciones en días de tormenta. La acompaña el crujir de su freno de oro y de tanto en tanto lanza un triste rebuzno, da gritos de dolor, echa fuego por la nariz y la boca y destellos por los ojos, estremeciendo a los que lo escuchan. Arrastra también pesadas cadenas, como otros seres condenados.</p>
+        
+        <p class="text-lg">La leyenda del almamula es la configuración sobrenatural del pecado. La necesidad de impartir enseñanzas de convivencia, ligadas a las concepciones religiosas, han simulado en este cuento un ejemplo del castigo o de condena social, que recae en aquellos que osan transgredir las costumbres heredadas.</p>
+      `
+    }
   ];
-  
+
   return mitos.map(mito => ({
-    params: { slug: mito },
+    params: { slug: mito.slug },
+    props: { mito }
   }));
 }
 
-const { slug } = Astro.params;
-
-const mitosData = {
-  'la-telesita': {
-    title: 'La Telesita',
-    description: 'La bailarina que murió de sed y fuego en el monte santiagueño',
-    content: `
-## El Relato
-
-En las tierras calientes de Santiago del Estero, entre el monte espinoso y los caminos de tierra roja, vivía Telésfora Castillo, conocida por todos como "La Telesita". Era una joven de belleza singular, pero lo que realmente la distinguía era su pasión desmedida por el baile.
-
-La Telesita podía bailar durante horas y horas sin descanso. Decían que cuando se movía al compás de la chacarera o el gato, el suelo mismo temblaba de emoción. Su fama creció tanto que llegó a ganar el primer premio en el concurso "Voces Argentinas", interpretando el vals "Rosas de Otoño".
-
-## La Tragedia
-
-Un día de verano, cuando el sol castigaba con fuerza la tierra santiagueña, La Telesita se internó en el monte para asistir a una fiesta. La música comenzó y ella, como siempre, no pudo resistirse.
-
-Bailó y bailó durante horas, mientras el calor sofocante y la sed la consumían. Algunos la advirtieron que descansara, que bebiera agua, pero ella, poseída por la música, no podía detenerse.
-
-El fuego del sol y la sed la vencieron. La Telesita cayó redonda en medio de la pista, y cuando la encontraron, ya era demasiado tarde.
-
-## El Mito
-
-Desde entonces, dicen que en las noches de luna llena, cuando el viento sopla desde el monte, se puede escuchar el eco de sus taconeos y ver una silueta bailando entre los algarrobos.
-    `
-  },
-  'el-kakuy': {
-    title: 'El Kakuy',
-    description: 'El hombre pájaro que vive en lo profundo del monte',
-    content: `
-## El Relato
-
-En lo más profundo del monte santiagueño, donde los algarrobos se entrelazan formando techos naturales, habita una criatura temida y respetada: el Kakuy.
-
-El Kakuy es descrito como un ser híbrido, mitad hombre y mitad ave. Tiene el cuerpo cubierto de plumas oscuras, garras afiladas en lugar de manos, y ojos amarillos brillantes que parecen ver a través del alma.
-
-## El Guardián del Monte
-
-Según la tradición, el Kakuy no es simplemente una bestia salvaje. Es el guardián del monte, el protector de los animales y las plantas sagradas. Vive en los árboles más altos, en nidos que construye con ramas y huesos de sus presas.
-
-Los ancianos cuentan que el Kakuy aparece cuando alguien perturba el equilibrio del monte. Si un cazador mata más de lo necesario, si alguien corta árboles sin permiso, el Kakuy vendrá en la noche.
-
-## El Aullido
-
-Su llamado es inconfundible: un grito agudo que parece venir de todas partes a la vez. Cuando los perros escuchan el aullido del Kakuy, se encogen de miedo. Los caballos se encabritan y relinchan de terror.
-
-Dicen que si escuchas el aullido del Kakuy tres noches seguidas, debes abandonar el lugar. Significa que has sido marcado.
-    `
-  },
-  'el-crespin': {
-    title: 'El Crespín',
-    description: 'El duende de la suerte que habita en las casas santiagueñas',
-    content: `
-## El Relato
-
-En las casas antiguas de Santiago del Estero, entre las paredes de adobe y los techos de caña, vive una criatura diminuta y traviesa conocida como el Crespín. Es un duende de no más de treinta centímetros, con el pelo rojo y rizado -de ahí su nombre- y una barba que le llega hasta los pies.
-
-El Crespín viste con ropas hechas de hojas secas y tela de araña, y lleva siempre consigo una pequeña bolsa mágica donde guarda sus tesoros.
-
-## El Duende de la Suerte
-
-A diferencia de otras criaturas del folclore santiagueño, el Crespín no es malévolo. De hecho, se le considera un bringer de buena suerte. Las familias que tienen un Crespín en su casa nunca pasan hambre.
-
-Pero el Crespín también es travieso. Le gusta esconder objetos, mover cosas de lugar, y asustar a los visitantes con pequeños ruidos nocturnos.
-
-## Cómo Atraer un Crespín
-
-Para que un Crespín elija tu casa como hogar, debes dejar ofrendas en las noches de luna nueva. Los Crespinés aman los dulces de almíbar, el tabaco en hoja de maíz, y las monedas de cobre.
-    `
-  },
-  'la-dama-de-blanco': {
-    title: 'La Dama de Blanco',
-    description: 'El alma en pena que vaga por las calles del centro histórico',
-    content: `
-## El Relato
-
-En las noches oscuras y silenciosas de Santiago del Estero, cuando el viento sopla desde el río Dulce y las calles del centro histórico quedan desiertas, aparece ella: la Dama de Blanco.
-
-Es el alma en pena de una mujer joven, vestida completamente de blanco, con un velo que cubre su rostro. Camina sin rumbo por las calles empedradas, pasando frente a la Catedral Basílica, el Cabildo, y las casas coloniales que han visto pasar siglos de historia.
-
-## El Origen
-
-Hay varias versiones sobre quién fue esta mujer en vida. La más popular cuenta que se trata de una novia que fue abandonada el día de su boda. Esperó vestida de blanco en la iglesia, pero el novio nunca llegó. Consumida por la tristeza, caminó hasta el río y se dejó llevar por las aguas.
-
-## Los Avistamientos
-
-Los testimonios de quienes dicen haberla visto coinciden en varios detalles: aparece solo en noches sin luna, camina en silencio sin hacer ruido, su vestido blanco brilla con una luz propia fantasmal.
-
-Se dice que si la ves tres veces, o si ella te mira directamente a los ojos, la maldición caerá sobre ti.
-    `
-  },
-  'el-nahuelito': {
-    title: 'El Nahuelito Santiagueño',
-    description: 'La criatura acuática que habita en las profundidades del río Dulce',
-    content: `
-## El Relato
-
-En las profundidades del río Dulce, donde las aguas son oscuras y frías, habita una criatura que ha aterrorizado a los pescadores y navegantes de Santiago del Estero desde tiempos inmemoriales: el Nahuelito Santiagueño.
-
-Similar al famoso Monstruo del Lago Ness, pero con características propias de la región, el Nahuelito es descrito como un ser enorme, con cuerpo de serpiente, cabeza de caballo, y aletas que parecen remos gigantes.
-
-## Los Avistamientos
-
-Los testimonios de quienes dicen haber visto al Nahuelito datan de siglos atrás. Los pueblos originarios ya contaban historias sobre "Yakru", el espíritu del agua que debía ser aplacado con ofrendas.
-
-En la época colonial, los españoles reportaron "una bestia acuática de proporciones increíbles" que volcó una embarcación cerca de la desembocadura del río.
-
-## Características
-
-Según los relatos, el Nahuelito mide entre 10 y 15 metros de largo, tiene una joroba prominente en la espalda, emite un sonido similar a un rugido bajo el agua, y es más activo durante las noches de tormenta.
-
-Los científicos sugieren que podría tratarse de un pez gigante o una especie desconocida de bagre, pero los lugareños saben la verdad: el Nahuelito existe.
-    `
-  }
-};
-
-const mito = mitosData[slug] || mitosData['la-telesita'];
+const { mito } = Astro.props;
 ---
 
-<Layout title={mito.title} description={mito.description}>
+<Layout title={mito.title} description={`Leyenda de ${mito.title} - Mitos y leyendas de Santiago del Estero`}>
   <article class="max-w-3xl mx-auto">
-    <a href="/" class="text-amber-700 hover:text-amber-900 mb-4 inline-block">← Volver al inicio</a>
-    
-    <h1 class="text-4xl font-bold mb-4 text-amber-900">{mito.title}</h1>
-    
-    <p class="text-xl text-amber-700 mb-8 italic">{mito.description}</p>
-    
-    <div class="prose prose-amber max-w-none">
-      <div set:html={mito.content} />
-    </div>
-    
-    <div class="mt-12 p-6 bg-amber-100 rounded-lg">
-      <h3 class="text-xl font-bold mb-4">Ver la Historieta</h3>
-      <a 
-        href={`/historietas#${slug}`}
-        class="inline-block bg-amber-700 text-white px-6 py-3 rounded-lg hover:bg-amber-800 transition"
-      >
-        Ver escenas ilustradas
-      </a>
+    <!-- Back link -->
+    <a href="/" class="inline-flex items-center text-orange-600 hover:text-orange-700 mb-8">
+      <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+      </svg>
+      Volver al inicio
+    </a>
+
+    <!-- Header -->
+    <header class="mb-10">
+      <span class="inline-block px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-4">
+        Leyenda
+      </span>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-4">
+        {mito.title}
+      </h1>
+      <div class="h-1 w-24 bg-orange-500 rounded"></div>
+    </header>
+
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed" set:html={mito.content} />
+
+    <!-- Source -->
+    <div class="mt-12 pt-8 border-t border-slate-200">
+      <p class="text-sm text-slate-500">
+        <strong>Fuente:</strong> <a href="https://ccbsantiago.gob.ar/creencias-populares-santiaguenas-mitos-y-leyendas/" class="text-orange-600 hover:underline" target="_blank" rel="noopener">
+          Centro Cultural del Bicentenario - Santiago del Estero
+        </a>
+      </p>
     </div>
   </article>
 </Layout>
