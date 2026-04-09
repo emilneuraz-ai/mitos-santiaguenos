@@ -1,0 +1,403 @@
+{
+  "mitos": [
+    {
+      "id": "sachayoj",
+      "nombre": "El Sachayoj",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "El Sachayoj es el protector del monte santiagueño. Se manifiesta como un hombre de ojos verdes brillantes que aparece en los senderos perdidos. Según el CCB Santiago, es una criatura que no busca hacer daño, sino compañía para su soledad eterna. Quien lo sigue al monte profundo no regresa. La tradición dice que nunca hay que salir después del mediodía sin agua, no dormir bajo los talas en flor, y nunca seguir al hombre de los ojos verdes."
+        },
+        "santiago_educativo": {
+          "historia": "El Sachayoj es el protector del monte. Se le describe como un ser que vigila los bosques y que puede aparecerse a quienes se adentran en el monte sin respeto. Es una figura temida pero no necesariamente maligna; su función es proteger la naturaleza de los intrusos. Se le asocia con el cuidado de la flora y fauna del monte santiagueño."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis antropológico de Amalia Beatriz Domínguez en El Liberal (1988), el Sachayoj representa la personificación del monte mismo. Es el 'dueño' del monte que castiga a quienes entran con malas intenciones o sin respeto. Su figura está relacionada con creencias prehispánicas sobre los espíritus guardianes de la naturaleza."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica del Sachayoj en el Alero Quichua. Esta fuente se centra más en otras figuras como la Almamula y el Kakuy."
+        },
+        "variantes_populares": [
+          "En algunas versiones, el Sachayoj ofrece agua a cambio de que lo sigan",
+          "Se dice que quien lo ve y no lo sigue, recibe el don de encontrar agua",
+          "Algunos cuentan que es el alma de un puestero que se perdió en el monte",
+          "En otras versiones, puede transformarse en animales del monte"
+        ]
+      }
+    },
+    {
+      "id": "mayu-maman",
+      "nombre": "La Mayu Maman",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "La Mayu Maman es la madre del río, una figura femenina que habita las aguas del río Salado. Según el CCB, es una deidad acuática que puede aparecerse como una mujer hermosa con cabello largo y negro como el agua profunda, vestida con ropas blancas que nunca se mojan. Canta canciones de cuna y llama a los niños con promesas de juegos y tesoros."
+        },
+        "santiago_educativo": {
+          "historia": "La Mayu Maman es la madre del agua, una figura que representa tanto la generosidad como el peligro del río. Se la describe como una mujer que, en vida, perdió a sus hijos en el río y ahora su espíritu busca constantemente a otros niños para llenar el vacío. Es una advertencia para que los niños no jueguen cerca del agua."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis de Domínguez, La Mayu Maman tiene raíces en las creencias indígenas sobre las deidades acuáticas. El río Salado era considerado una entidad viva con una 'madre' que controlaba sus crecidas y su caudal. La figura de la mujer que se lleva a los niños es una personificación de los peligros reales que representaban los ríos para las comunidades rurales."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica de La Mayu Maman en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "En algunas versiones, era una mujer que sacrificó a sus hijos al río para salvar a su esposo",
+          "Se dice que en noches de tormenta se escuchan cuatro voces: la madre y tres niños",
+          "Algunos afirman que no quiere hacer daño, está condenada a llamar a otros niños",
+          "En otras versiones, aparece antes de las crecidas del río como advertencia"
+        ]
+      }
+    },
+    {
+      "id": "pampayoj",
+      "nombre": "El Pampayoj",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "El Pampayoj es el dueño de la pampa, el señor del monte. Según el CCB Santiago, no es un solo ser sino muchos: todas las almas de quienes murieron solos en el desierto, condenados a vagar por la tierra que los devoró. Se manifiesta como una figura compuesta de múltiples cuerpos fusionados, con demasiados brazos y demasiadas cabezas."
+        },
+        "santiago_educativo": {
+          "historia": "El Pampayoj es el dueño de las llanuras y el monte espeso. Es una criatura que representa la soledad y el peligro de perderse en el monte. Se le describe como una entidad que no es buena ni mala, sino la personificación de la soledad eterna de quienes murieron sin compañía en el desierto."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis antropológico, el Pampayoj representa el miedo ancestral a la desorientación en el monte. Su figura de 'muchos en uno' simboliza la acumulación de almas perdidas. Es una manifestación de la 'pampa' como entidad viva que absorbe a quienes la habitan sin respeto."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica del Pampayoj en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Se dice que el fuego lo asusta porque le recuerda la vida que perdió",
+          "Algunos cuentan que ofrece compañía eterna a quienes se pierden",
+          "En ciertas versiones, se le escucha caminar sobre las ramas de los árboles",
+          "Se dice que su olor es a podrido y a desesperación concentrada"
+        ]
+      }
+    },
+    {
+      "id": "uritu-orko",
+      "nombre": "La Uritu Orko",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "La Uritu Orko es la mujer de la cumbre, una figura que habita los cerros del monte santiagueño. Según el CCB, es el espíritu de una mujer que traicionó el amor verdadero y fue transformada en lechuza como castigo. Aparece en las noches de tormenta, posada en los algarrobos, con ojos que brillan como brasas."
+        },
+        "santiago_educativo": {
+          "historia": "No se encuentra referencia específica de La Uritu Orko en Santiago Educativo."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis de Domínguez, La Uritu Orko está relacionada con mitos más amplios sobre la transformación de mujeres en aves nocturnas como castigo por traición amorosa. Su nombre proviene del quechua 'uritu' (lechuza) y 'orko' (cerro o cumbre)."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica de La Uritu Orko en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Era una mujer llamada Rosa que abandonó a su prometido por un señorito de la ciudad",
+          "Se dice que su llanto se escucha en noches de verano cuando el calor aprieta",
+          "Algunos afirman que tiene a su prometido prisionero en algún rincón del monte",
+          "Aparece antes de las desgracias; cuando se posa cerca de una casa, alguien va a morir"
+        ]
+      }
+    },
+    {
+      "id": "salamanca",
+      "nombre": "La Salamanca",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "La Salamanca es una cueva del diablo, un lugar donde se reúnen los brujos, hechiceros y almas en pena. Según el CCB, es una cueva o túnel que lleva a un lugar donde las reglas de Dios no aplican. Allí se aprende magia negra a cambio de la sombra del aprendiz."
+        },
+        "santiago_educativo": {
+          "historia": "La Salamanca es descrita detalladamente como una cueva misteriosa donde se realizan rituales de brujería. Es un lugar de saber prohibido donde los brujos bailan alrededor de fuegos verdes y se realizan pactos demoníacos. Quien entra debe dejar su sombra en la puerta."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis antropológico detallado de Domínguez, La Salamanca representa el temor a lo oculto y al conocimiento prohibido. La idea de 'dejar la sombra' simboliza la pérdida de la humanidad al adquirir poderes sobrenaturales. Es una metáfora del precio del saber oscuro."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica de La Salamanca en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Se dice que está ubicada en el cerro del Yuchán",
+          "Algunos afirman que el tiempo pasa diferente dentro: siete años son siete días",
+          "Quien rompe el pacto de silencio es reclamado por la Salamanca",
+          "Se dice que el brujo que recluta nuevos aprendices es el mismo Pedro, reclamado hace siglos"
+        ]
+      }
+    },
+    {
+      "id": "kakuy",
+      "nombre": "El Kakuy",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "El Kakuy es el pájaro que fue mujer, un espíritu que camina en las noches de invierno. Según el CCB, puede adoptar muchas formas: perro negro de ojos rojos, hombre alto vestido de negro, o simplemente una sombra que se mueve en el rincón. Es un aviso, una advertencia hecha carne."
+        },
+        "santiago_educativo": {
+          "historia": "El Kakuy es una de las leyendas más importantes de Santiago del Estero. Se le describe con imágenes como un espíritu del monte que castiga a los malos padres y protege a los niños buenos. Su origen está en el sacrificio de un niño llamado Kakuy por su propio padre, el cacique Yuchán."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis antropológico de Domínguez, el Kakuy representa la justicia sobrenatural. Es una figura compleja que no es buena ni mala: castiga a quienes traicionan a sus hijos pero protege a los viajeros honestos. Su origen está en la crítica al abuso de poder de los caciques."
+        },
+        "alero_quichua": {
+          "historia": "El Alero Quichua presenta al Kakuy como una figura central del folklore santiagueño. Su nombre tiene raíces quechuas y su historia está vinculada a la crítica social contra los padres que abandonan o maltratan a sus hijos. Es un espíritu de justicia más que de venganza."
+        },
+        "variantes_populares": [
+          "Se dice que cuando un padre trata mal a sus hijos, el Kakuy se hace perro negro y lo sigue",
+          "Protege a los niños buenos que se pierden en el monte",
+          "A los viajeros honestos los acompaña en silencio alejando peligros",
+          "Si acepta agua de un viajero, lo protegerá esa noche"
+        ]
+      }
+    },
+    {
+      "id": "crespin",
+      "nombre": "El Crespín",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "El Crespín es la mujer transformada en ave, un espíritu del amor eterno. Según el CCB, es el espíritu de los amores truncados, de las pasiones que la muerte no puede extinguir. Se le ve en noches de luna llena paseando con su amado entre los algarrobos."
+        },
+        "santiago_educativo": {
+          "historia": "El Crespín es una de las leyendas más románticas de Santiago del Estero. Se le describe con imágenes como la historia de Cresencia, una joven de rizos negros que se enamoró de un forastero llamado Ángel. Tras su muerte trágica, ambos espíritus pasean juntos por el monte."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis de Domínguez, el Crespín representa la creencia en que el amor verdadero trasciende la muerte. Es una figura que contrasta con otras leyendas más oscuras, mostrando que no todo lo sobrenatural es maligno. Su nombre proviene de 'Cresencia', la protagonista de la historia."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica del Crespín en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Se dice que en noches de luna llena se les ve paseando entre los algarrobos",
+          "No hay que interrumpirlos ni llamarlos por sus nombres",
+          "Se escucha la risa de Cresencia mezclada con la voz de Ángel",
+          "Representa el amor que trasciende las fronteras de la vida y la muerte"
+        ]
+      }
+    },
+    {
+      "id": "runauturungo",
+      "nombre": "El Runauturungo",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "El Runauturungo es el tigre demoníaco del monte, aunque en Santiago del Estero se le conoce como el espíritu que camina sobre las copas de los árboles. Su nombre proviene del quechua: 'runa' (hombre) y 'turungo' (sonido de algo pesado al caer)."
+        },
+        "santiago_educativo": {
+          "historia": "No se encuentra referencia específica del Runauturungo en Santiago Educativo."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis de Domínguez, el Runauturungo es una de las figuras más aterradoras del folklore santiagueño. Camina sobre las ramas más altas de los árboles con una agilidad sobrenatural. Se le escucha antes de verse: el sonido de pasos sobre las ramas, el crujido de madera bajo pies invisibles."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica del Runauturungo en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Se dice que es el espíritu de un cazador indígena que violó una prohibición sagrada",
+          "Algunos afirman que es un duende del monte que protege su territorio",
+          "Hay que quedarse quieto y en silencio si se le escucha cerca",
+          "Algunos sugieren llevar tabaco o alcohol como ofrenda"
+        ]
+      }
+    },
+    {
+      "id": "toro-yacu",
+      "nombre": "El Toro Yacu",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "El Toro Yacu es el toro negro con cuernos de oro que habita en las aguas. Según el CCB, es una criatura que desafía toda clasificación, mitad animal y mitad demonio, guardián de las aguas y castigo de los codiciosos."
+        },
+        "santiago_educativo": {
+          "historia": "El Toro Yacu (o Toro Supay) es descrito como una criatura acuática que habita lagunas y ríos. Es el guardián de las aguas y castiga a quienes intentan desviar o contaminar cuerpos de agua. Su apariencia es de un toro enorme hecho de agua y sombra, con ojos rojizos."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis de Domínguez, el Toro Yacu (llamado también Toro Supay) representa la defensa de los recursos naturales contra la codicia humana. Es una manifestación de la naturaleza que se venga de quienes abusan de ella. Su figura tiene raíces en creencias indígenas sobre espíritus guardianes de las aguas."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica del Toro Yacu en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Se dice que es el espíritu de un cacique indígena asesinado cuyo cuerpo fue arrojado a la laguna",
+          "Algunos afirman que es la manifestación de la propia naturaleza vengándose",
+          "Otros dicen que es un demonio enviado por Dios para castigar la codicia",
+          "Aparece cuando alguien intenta desviar o contaminar las aguas"
+        ]
+      }
+    },
+    {
+      "id": "telesita",
+      "nombre": "La Telesita",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "La Telesita es la niña que murió bailando, una figura que aparece en los caminos rurales después del mediodía. Según el CCB, es el espíritu de una joven abandonada por su amado que se dejó caer en una cisterna. Ahora pide aventón a los viajeros solitarios."
+        },
+        "santiago_educativo": {
+          "historia": "La Telesita es una de las leyendas más conocidas de Santiago del Estero. Se le describe detalladamente como una joven de ojos verdes que esperó en vano a su amado Aniceto. Aparece vestida de blanco a la vera de los caminos, pidiendo que la lleven. Si el viajero se detiene, desaparece."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis de Domínguez, La Telesita representa el arquetipo de la mujer abandonada que busca venganza o compañía. Su historia refleja las desigualdades de género de la época y el destino trágico de las mujeres que confiaban en promesas masculinas."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica de La Telesita en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Se dice que fue abandonada por Aniceto, un forastero que prometió casarse con ella",
+          "No hay que detenerse si se la ve, ni mirarla a los ojos",
+          "Busca a Aniceto; cualquier hombre solitario corre el riesgo de ser confundido con él",
+          "En noches de tormenta se la escucha cantando zambas"
+        ]
+      }
+    },
+    {
+      "id": "supay",
+      "nombre": "El Supay",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "El Supay es el genio del mal, el dueño de las profundidades. Según el CCB, no es un demonio cristiano sino algo más viejo, más profundo. Es el guardián de los tesoros enterrados y castiga a quienes buscan lo que no deben."
+        },
+        "santiago_educativo": {
+          "historia": "El Supay (o Toro Supay en algunas variantes) es descrito como una entidad del inframundo que vigila los tesoros ocultos. Habita cuevas y lugares profundos del monte. Es temido pero también respetado, y puede ser útil si se le trata con respeto."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis de Domínguez, el Supay es una de las figuras más complejas del folklore santiagueño. No es inherentemente maligno sino 'justo': respeta a quienes lo respetan y castiga a quienes lo ofenden. Representa la defensa de los tesoros indígenas contra los conquistadores y buscadores de fortuna."
+        },
+        "alero_quichua": {
+          "historia": "El Alero Quichua presenta al Supay como una figura prehispánica que precedió al cristianismo. Es el 'dueño de abajo', guardián de las profundidades de la tierra. Su culto requiere ofrendas de tabaco, alcohol y dulces."
+        },
+        "variantes_populares": [
+          "Se manifiesta como hombre de piel oscura con cuernos de toro y pies de pezuña",
+          "También puede aparecer como animal que no es ningún animal conocido",
+          "En noches de tormenta se le escucha reír con una risa que no es humana ni animal",
+          "Los curanderos tienen 'pacto' con él: ofrendas a cambio de poder curativo"
+        ]
+      }
+    },
+    {
+      "id": "almamula",
+      "nombre": "La Almamula",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "La Almamula es la mula que fue mujer, una figura que aparece en los caminos de noche. Según el CCB, es el espíritu de una criada hermosa que fue víctima de abuso y se transformó en criatura vengativa. Aparece como mujer hermosa para tentar a los hombres malvados."
+        },
+        "santiago_educativo": {
+          "historia": "La Almamula es descrita detalladamente como una de las figuras más aterradoras del folklore. Era Inés, una criada de piel morena que fue acosada por su patrón. Tras una invocación oscura, se transformó en criatura mitad mujer, mitad animal: cabeza de burro, cuerpo de mujer, patas de cabra, cola de serpiente."
+        },
+        "cuco_diccionario": {
+          "historia": "Según el análisis detallado del Dr. Jose Uñates en el Alero Quichua, citado por Domínguez, la Almamula combina simbolismo cristiano (la mula como animal impuro) con elementos amerindios. Representa la venganza de la mujer oprimida contra el patriarcado abusivo."
+        },
+        "alero_quichua": {
+          "historia": "El Alero Quichua presenta un análisis lingüístico y cultural detallado de la Almamula, obra del Dr. Jose Uñates. Señala que combina elementos cristianos (castigo por pecado) con raíces amerindias (transformación como poder). Es una figura de empoderamiento femenino en contexto de opresión."
+        },
+        "variantes_populares": [
+          "Era Inés, criada de una estancia que fue acosada por don Ramón",
+          "Se transformó tras invocar fuerzas antiguas en un cementerio",
+          "Aparece como mujer hermosa pero se transforma si el hombre tiene malas intenciones",
+          "Castiga a hombres que abusan de mujeres, a veces tarda años pero llega"
+        ]
+      }
+    },
+    {
+      "id": "tanicu",
+      "nombre": "El Tanicu",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "No se encuentra referencia específica del Tanicu en el CCB Santiago."
+        },
+        "santiago_educativo": {
+          "historia": "El Tanicu es el dios de la carestía, una deidad temida en el sur mesopotámico de Santiago del Estero, especialmente en la costa del Río Dulce. Se le describe como un ser andrajoso, descuidado, flaco y hambriento: la reunión semiótica de la miseria hecha personaje."
+        },
+        "cuco_diccionario": {
+          "historia": "No se encuentra referencia específica del Tanicu en el Diccionario de Mitos de Cuco.com.ar."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica del Tanicu en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "La fiesta del Tanicu se celebra el primer domingo de octubre",
+          "No es para honrarlo sino para que no venga",
+          "Los vecinos se visitan con gran griterío, comen y beben en abundancia",
+          "La olla debe hervir permanentemente con alcucu, hueso o agua pura",
+          "Si nota escasez, llegará y se quedará, trayendo un año de necesidades"
+        ]
+      }
+    },
+    {
+      "id": "ckaparilo",
+      "nombre": "El Ckapariló",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "No se encuentra referencia específica del Ckapariló en el CCB Santiago."
+        },
+        "santiago_educativo": {
+          "historia": "El Ckapariló es una variante del Sachayoj. Su nombre significa 'el que es gritón' en quichua. Es el protector de la selva y las colmenas. Remeda gritos de aves y meleros como advertencia."
+        },
+        "cuco_diccionario": {
+          "historia": "No se encuentra referencia específica del Ckapariló en el Diccionario de Mitos de Cuco.com.ar."
+        },
+        "alero_quichua": {
+          "historia": "El Alero Quichua presenta al Ckapariló (del quechua 'ckapa' = grito, '-riló' = aumentativo) como 'el Gritón de la Selva'. Es guardián de las colmenas de abejas nativas sin aguijón (yateí). Su sistema de gritos codificados advierte sobre la gravedad de las transgresiones contra la selva."
+        },
+        "variantes_populares": [
+          "Fue en tiempos remotos un yatiri (curandero) que se fusionó con la selva",
+          "Su cuerpo es de niebla vegetal, musgo y rayos de sol filtrados",
+          "Los gritos forman un lenguaje: agudo y corto es advertencia leve, triple descendente es peligro inminente",
+          "El silencio absoluto es el peor presagio: hay que abandonar la selva inmediatamente"
+        ]
+      }
+    },
+    {
+      "id": "umita",
+      "nombre": "La Umita",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "No se encuentra referencia específica de La Umita en el CCB Santiago."
+        },
+        "santiago_educativo": {
+          "historia": "La Umita es una deidad del monte. Su forma es una cabeza rodante con larga cabellera. Es protectora de viajeros contra malos espíritus. Su nombre proviene del quechua 'uma' (cabeza)."
+        },
+        "cuco_diccionario": {
+          "historia": "No se encuentra referencia específica de La Umita en el Diccionario de Mitos de Cuco.com.ar."
+        },
+        "alero_quichua": {
+          "historia": "El Alero Quichua presenta a La Umita (del quechua 'uma' = cabeza, '-ita' = diminutivo cariñoso) como 'la Cabeza Rodante del Monte'. Fue en vida una mujer de extraordinaria bondad, curandera o partera. Su espíritu guía a los perdidos hacia la seguridad. Solo los 'puros de corazón' pueden verla."
+        },
+        "variantes_populares": [
+          "Era una mujer de extraordinaria bondad que dedicó su vida a ayudar",
+          "Su cabeza se desprendió y adquirió vida propia al morir",
+          "Tiene ojos grandes y oscuros que brillan con luz propia en la oscuridad",
+          "Su cabellera larguísima señala direcciones como flechas naturales",
+          "Los malvados caminan ciegos mientras ella rueda a su lado invisible"
+        ]
+      }
+    },
+    {
+      "id": "linyerita",
+      "nombre": "El Linyerita",
+      "fuentes": {
+        "ccb_santiago": {
+          "historia": "No se encuentra referencia específica de El Linyerita en el CCB Santiago."
+        },
+        "santiago_educativo": {
+          "historia": "El Linyerita es un alma milagrosa de Santiago capital. Era un mendigo asesinado por matreros en el barrio Huaico Hondo. Su cruz es sitio de peregrinación con velas y flores. Es tema de una canción de Carlos Infante."
+        },
+        "cuco_diccionario": {
+          "historia": "No se encuentra referencia específica de El Linyerita en el Diccionario de Mitos de Cuco.com.ar."
+        },
+        "alero_quichua": {
+          "historia": "No se encuentra referencia específica de El Linyerita en el Alero Quichua."
+        },
+        "variantes_populares": [
+          "Era un mendigo de avanzada edad, de rasgos indígenas marcados",
+          "Pedía limosna con humildad y dignidad, bendiciendo a quienes le daban",
+          "Fue asesinado en circunstancias nunca esclarecidas cerca de Huaico Hondo",
+          "Su cruz es un santuario del pueblo, fuera del control de la Iglesia oficial",
+          "Se le atribuyen milagros de curación y protección",
+          "Carlos Infante compuso una canción que lo inmortalizó: 'Linyerita, alma de Dios'"
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "total_mitos": 16,
+    "fuentes_principales": [
+      "Centro Cultural del Bicentenario (CCB) Santiago",
+      "Santiago Educativo",
+      "Diccionario de Mitos y Leyendas - Cuco.com.ar (Amalia Beatriz Domínguez, 1988)",
+      "Alero Quichua Santiagueño (Dr. Jose Uñates)"
+    ],
+    "fecha_creacion": "2026-04-09",
+    "proyecto": "Mitos Santiagueños - Recopilación de historias por fuente"
+  }
+}

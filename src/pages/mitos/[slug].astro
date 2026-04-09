@@ -3,118 +3,49 @@ import Layout from '../../layouts/Layout.astro';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 
-// Datos de fuentes para cada mito
-const fuentesPorMito: Record<string, any> = {
-  'el-sachayoj': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico de leyendas' }
-    ]
-  },
-  'la-mayu-maman': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' },
-      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar', tipo: 'Cultural', descripcion: 'Análisis lingüístico quichua' }
-    ]
-  },
-  'el-pampayoj': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' }
-    ]
-  },
-  'la-uritu-orko': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico' }
-    ]
-  },
-  'la-salamanca': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis detallado de la Salamanca' }
-    ]
-  },
-  'el-kakuy': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico detallado' },
-      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar/sitio/mitos.php', tipo: 'Cultural', descripcion: 'Origen quichua del mito' }
-    ]
-  },
-  'el-crespin': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico' }
-    ]
-  },
-  'el-runauturungo': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico' }
-    ]
-  },
-  'el-toro-yacu': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Como Toro Supay' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis del Toro Supay' }
-    ]
-  },
-  'la-telesita': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico' },
-      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar', tipo: 'Cultural', descripcion: 'Análisis cultural' }
-    ]
-  },
-  'el-supay': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Como Toro Supay' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis del Supay' },
-      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar/sitio/mitos.php', tipo: 'Cultural', descripcion: 'Origen quichua' }
-    ]
-  },
-  'la-almamula': {
-    fuentes: [
-      { nombre: 'Centro Cultural del Bicentenario Santiago', url: 'https://ccbsantiago.gob.ar', tipo: 'Oficial', descripcion: 'Fuente principal del gobierno provincial' },
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico' },
-      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar/sitio/mitos.php', tipo: 'Cultural', descripcion: 'Análisis del Dr. Jose Uñates' }
-    ]
-  },
-  'el-tanicu': {
-    fuentes: [
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' },
-      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis folclórico' }
-    ]
-  },
-  'el-ckaparilo': {
-    fuentes: [
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' },
-      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar', tipo: 'Cultural', descripcion: 'Análisis del nombre quichua' }
-    ]
-  },
-  'la-umita': {
-    fuentes: [
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' },
-      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar', tipo: 'Cultural', descripcion: 'Origen quichua: uma = cabeza' }
-    ]
-  },
-  'el-linyerita': {
-    fuentes: [
-      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
-      { nombre: 'Cancionero Popular Santiagueño', url: 'https://cancioneropopulardesantiagodelestero.blogspot.com/', tipo: 'Musical', descripcion: 'Canción de Carlos Infante' }
-    ]
-  }
-};
+// Importar datos de los archivos JSON
+import sobreLosMitosData from '../../../data/sobre-los-mitos.json';
+import historiasPorFuenteData from '../../../data/historias-por-fuente.json';
+import cancionesData from '../../../data/canciones.json';
+
+// Función para obtener el ID del mito a partir del slug
+function getMitoIdFromSlug(slug: string): string {
+  const slugToId: Record<string, string> = {
+    'el-sachayoj': 'sachayoj',
+    'la-mayu-maman': 'mayu-maman',
+    'el-pampayoj': 'pampayoj',
+    'la-uritu-orko': 'uritu-orko',
+    'la-salamanca': 'salamanca',
+    'el-kakuy': 'kakuy',
+    'el-crespin': 'crespin',
+    'el-runauturungo': 'runauturungo',
+    'el-toro-yacu': 'toro-yacu',
+    'la-telesita': 'telesita',
+    'el-supay': 'supay',
+    'la-almamula': 'almamula',
+    'el-tanicu': 'tanicu',
+    'el-ckaparilo': 'ckaparilo',
+    'la-umita': 'umita',
+    'el-linyerita': 'linyerita'
+  };
+  return slugToId[slug] || slug;
+}
+
+// Función para obtener canciones relacionadas con un mito
+function getCancionesPorMito(mitoNombre: string, mitoId: string): any[] {
+  return cancionesData.canciones.filter(cancion => 
+    cancion.mitos_mencionados.some(m => 
+      m.toLowerCase() === mitoNombre.toLowerCase() ||
+      m.toLowerCase().replace(/\s+/g, '-') === mitoId.toLowerCase()
+    )
+  );
+}
+
+// Función para extraer ID de video de YouTube
+function getYouTubeId(url: string): string | null {
+  const match = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+  return match ? match[1] : null;
+}
 
 export async function getStaticPaths() {
   const mitos = [
@@ -131,7 +62,7 @@ export async function getStaticPaths() {
     { slug: 'el-supay', title: 'El Supay' },
     { slug: 'la-almamula', title: 'La Almamula' },
     { slug: 'el-tanicu', title: 'El Tanicu' },
-    { slug: 'el-ckaparilo', title: 'El Ckaparilo' },
+    { slug: 'el-ckaparilo', title: 'El Ckapariló' },
     { slug: 'la-umita', title: 'La Umita' },
     { slug: 'el-linyerita', title: 'El Linyerita' }
   ];
@@ -143,21 +74,23 @@ export async function getStaticPaths() {
 }
 
 const { mito } = Astro.props;
-const fuentesData = fuentesPorMito[mito.slug] || { fuentes: [] };
+const mitoId = getMitoIdFromSlug(mito.slug);
 
-// Leer contenido del archivo
-let contenido = { historia: '', escenas: [], guion: '' };
+// Obtener datos del mito
+const sobreElMito = sobreLosMitosData.mitos.find(m => m.slug === mito.slug);
+const historiasFuente = historiasPorFuenteData.mitos.find(m => m.id === mitoId);
+const cancionesRelacionadas = getCancionesPorMito(mito.title, mitoId);
+
+// Leer contenido del archivo para las escenas ilustradas
+let escenas: any[] = [];
 try {
   const filePath = join(process.cwd(), 'contenido', `${mito.slug}-completo.md`);
   const fileContent = readFileSync(filePath, 'utf-8');
   
-  const historiaMatch = fileContent.match(/## Historia Completa\n\n([\s\S]*?)(?=\n## Historieta|$)/);
   const historietaMatch = fileContent.match(/## Historieta\n\n([\s\S]*?)(?=\n## Guion|$)/);
-  const guionMatch = fileContent.match(/## Guion para Corto[^\n]*\n\n([\s\S]*?)$/);
   
   // Parsear escenas de la historieta
   const escenasRaw = historietaMatch ? historietaMatch[1].trim() : '';
-  const escenas = [];
   const escenaBlocks = escenasRaw.split('### Escena').filter(Boolean);
   
   for (const block of escenaBlocks) {
@@ -184,15 +117,17 @@ try {
       escenas.push({ titulo, descripcion, dialogo, prompt });
     }
   }
-  
-  contenido = {
-    historia: historiaMatch ? historiaMatch[1].trim() : '',
-    escenas: escenas,
-    guion: guionMatch ? guionMatch[1].trim() : ''
-  };
 } catch (e) {
   console.error('Error leyendo archivo:', e);
 }
+
+// Nombres de fuentes para mostrar
+const fuentesNombres: Record<string, string> = {
+  'ccb_santiago': 'Centro Cultural del Bicentenario Santiago',
+  'santiago_educativo': 'Santiago Educativo',
+  'cuco_diccionario': 'Diccionario de Mitos y Leyendas - Cuco',
+  'alero_quichua': 'Alero Quichua Santiagueño'
+};
 ---
 
 <Layout title={mito.title} description={`Leyenda de ${mito.title} - Múltiples fuentes: CCB Santiago, Santiago Educativo, Diccionario de Mitos y Leyendas, Alero Quichua`}>
@@ -214,74 +149,130 @@ try {
       <div class="h-1 w-24 bg-orange-500 rounded"></div>
     </header>
 
+    <!-- Tabs -->
     <div class="mb-8">
       <div class="flex flex-wrap border-b border-slate-200">
-        <button id="tab-historia" class="tab-btn px-4 py-3 text-sm font-medium text-orange-600 border-b-2 border-orange-600 bg-orange-50/50" onclick="switchTab('historia')">
-          📖 Historia
+        <button id="tab-sobre" class="tab-btn px-4 py-3 text-sm font-medium text-orange-600 border-b-2 border-orange-600 bg-orange-50/50" onclick="switchTab('sobre')">
+          📖 Sobre el Mito
         </button>
-        <button id="tab-guion" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('guion')">
-          🎬 Guión
+        <button id="tab-historia" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('historia')">
+          📜 Historia
         </button>
         <button id="tab-fuentes" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('fuentes')">
           📚 Fuentes
         </button>
+        <button id="tab-canciones" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('canciones')">
+          🎵 Canciones
+        </button>
       </div>
     </div>
 
-    <div id="content-historia" class="tab-content">
-      <div class="prose prose-lg max-w-none text-slate-700 leading-relaxed">
-        {contenido.historia.split('\n\n').map((parrafo) => (
-          <p class="mb-4 text-lg leading-relaxed">{parrafo}</p>
-        ))}
-      </div>
-
-      {contenido.escenas.length > 0 && (
-        <div class="mt-12 pt-8 border-t-2 border-orange-200">
-          <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6 flex items-center gap-2">
-            <span>🎨</span> Escenas Ilustradas
-          </h2>
-          <p class="text-slate-600 mb-6">Visualizaciones clave de la historia para comprender mejor el relato:</p>
-          
-          <div class="space-y-8">
-            {contenido.escenas.map((escena, i) => (
-              <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-                <h3 class="text-xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-3">
-                  Escena {i + 1}: {escena.titulo}
-                </h3>
-                <p class="text-slate-700 mb-4">{escena.descripcion}</p>
-                {escena.dialogo && (
-                  <div class="bg-white rounded-lg p-4 mb-4 border-l-4 border-orange-500">
-                    <p class="text-sm text-slate-500 mb-1">Diálogo:</p>
-                    <p class="text-slate-800 italic">{escena.dialogo}</p>
-                  </div>
-                )}
-                {escena.prompt && (
-                  <div class="bg-slate-100 rounded-lg p-4 border border-slate-300">
-                    <div class="flex items-center justify-between mb-2">
-                      <p class="text-sm font-medium text-slate-700">🎨 Descripción para ilustración:</p>
-                      <button 
-                        onclick="copyPrompt(this, '{escena.prompt.replace(/'/g, "\\'")}')"
-                        class="text-xs px-3 py-1 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors"
-                      >
-                        Copiar
-                      </button>
-                    </div>
-                    <code class="text-xs text-slate-600 block break-words bg-white p-3 rounded border border-slate-200">{escena.prompt}</code>
-                  </div>
-                )}
-              </div>
-            ))}
+    <!-- Tab: Sobre el Mito -->
+    <div id="content-sobre" class="tab-content">
+      {sobreElMito ? (
+        <div class="prose prose-lg max-w-none">
+          <div class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl p-6 border border-orange-200 mb-8">
+            <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-4 flex items-center gap-2">
+              <span>✨</span> Descripción
+            </h2>
+            <div class="text-slate-700 leading-relaxed whitespace-pre-line">
+              {sobreElMito.sobre_el_mito}
+            </div>
           </div>
+
+          {escenas.length > 0 && (
+            <div class="mt-12 pt-8 border-t-2 border-orange-200">
+              <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6 flex items-center gap-2">
+                <span>🎨</span> Escenas Ilustradas
+              </h2>
+              <p class="text-slate-600 mb-6">Visualizaciones clave de la historia para comprender mejor el relato:</p>
+              
+              <div class="space-y-8">
+                {escenas.map((escena, i) => (
+                  <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                    <h3 class="text-xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-3">
+                      Escena {i + 1}: {escena.titulo}
+                    </h3>
+                    <p class="text-slate-700 mb-4">{escena.descripcion}</p>
+                    {escena.dialogo && (
+                      <div class="bg-white rounded-lg p-4 mb-4 border-l-4 border-orange-500">
+                        <p class="text-sm text-slate-500 mb-1">Diálogo:</p>
+                        <p class="text-slate-800 italic">{escena.dialogo}</p>
+                      </div>
+                    )}
+                    {escena.prompt && (
+                      <div class="bg-slate-100 rounded-lg p-4 border border-slate-300">
+                        <div class="flex items-center justify-between mb-2">
+                          <p class="text-sm font-medium text-slate-700">🎨 Descripción para ilustración:</p>
+                          <button 
+                            onclick={`copyPrompt(this, '${escena.prompt.replace(/'/g, "\\'")}')`}
+                            class="text-xs px-3 py-1 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors"
+                          >
+                            Copiar
+                          </button>
+                        </div>
+                        <code class="text-xs text-slate-600 block break-words bg-white p-3 rounded border border-slate-200">{escena.prompt}</code>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+          <p class="text-slate-600">No hay información disponible sobre este mito.</p>
         </div>
       )}
     </div>
 
-    <div id="content-guion" class="tab-content hidden">
-      <div class="bg-slate-900 text-slate-100 rounded-xl p-6 font-mono text-sm overflow-x-auto">
-        <pre class="whitespace-pre-wrap">{contenido.guion}</pre>
-      </div>
+    <!-- Tab: Historia -->
+    <div id="content-historia" class="tab-content hidden">
+      {historiasFuente ? (
+        <div class="space-y-8">
+          <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6">
+            Versiones por Fuente
+          </h2>
+          
+          {Object.entries(historiasFuente.fuentes)
+            .filter(([key]) => key !== 'variantes_populares')
+            .map(([fuenteKey, data]: [string, any]) => (
+              data.historia && !data.historia.includes('No se encuentra referencia') ? (
+                <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                  <div class="flex items-center gap-2 mb-4">
+                    <span class="w-3 h-3 rounded-full bg-orange-500"></span>
+                    <h3 class="font-bold text-slate-900 text-lg">{fuentesNombres[fuenteKey] || fuenteKey}</h3>
+                  </div>
+                  <p class="text-slate-700 leading-relaxed">{data.historia}</p>
+                </div>
+              ) : null
+          ))}
+
+          {historiasFuente.fuentes.variantes_populares && historiasFuente.fuentes.variantes_populares.length > 0 && (
+            <div class="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6 border border-orange-200">
+              <h3 class="font-bold text-slate-900 text-lg mb-4 flex items-center gap-2">
+                <span>🗣️</span> Variantes Populares
+              </h3>
+              <ul class="space-y-3">
+                {historiasFuente.fuentes.variantes_populares.map((variante: string) => (
+                  <li class="flex items-start gap-3">
+                    <span class="text-orange-500 mt-1">•</span>
+                    <span class="text-slate-700">{variante}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      ) : (
+        <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+          <p class="text-slate-600">No hay información histórica disponible para este mito.</p>
+        </div>
+      )}
     </div>
 
+    <!-- Tab: Fuentes -->
     <div id="content-fuentes" class="tab-content hidden">
       <div class="mb-8">
         <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6">
@@ -291,23 +282,40 @@ try {
           Esta leyenda ha sido recopilada de múltiples fuentes para ofrecer una visión completa y fidedigna del folklore santiagueño.
         </p>
         
-        <div class="space-y-4">
-          {fuentesData.fuentes.map((fuente: any) => (
-            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-orange-300 transition-colors">
-              <div class="flex flex-wrap items-start justify-between gap-2">
-                <h3 class="font-bold text-slate-900 text-lg">{fuente.nombre}</h3>
-                <span class="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">{fuente.tipo}</span>
-              </div>
-              <p class="text-slate-600 mt-2">{fuente.descripcion}</p>
-              <a href={fuente.url} target="_blank" rel="noopener" class="inline-flex items-center text-orange-600 hover:text-orange-700 text-sm mt-3">
-                Visitar fuente
-                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                </svg>
-              </a>
-            </div>
-          ))}
-        </div>
+        {historiasFuente ? (
+          <div class="space-y-4">
+            {Object.entries(historiasFuente.fuentes)
+              .filter(([key]) => key !== 'variantes_populares')
+              .map(([fuenteKey, data]: [string, any]) => (
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-orange-300 transition-colors">
+                  <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+                    <h3 class="font-bold text-slate-900 text-lg">{fuentesNombres[fuenteKey] || fuenteKey}</h3>
+                    {data.historia && !data.historia.includes('No se encuentra referencia') ? (
+                      <span class="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full">Contenido disponible</span>
+                    ) : (
+                      <span class="px-2 py-1 bg-slate-200 text-slate-600 text-xs rounded-full">Sin referencia</span>
+                    )}
+                  </div>
+                  {data.historia && !data.historia.includes('No se encuentra referencia') ? (
+                    <button 
+                      onclick={`openModal('${fuenteKey}', '${fuentesNombres[fuenteKey] || fuenteKey}', \`${data.historia.replace(/`/g, '\\`')}\`)`}
+                      class="inline-flex items-center text-orange-600 hover:text-orange-700 text-sm font-medium"
+                    >
+                      Ver contenido
+                      <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                      </svg>
+                    </button>
+                  ) : (
+                    <p class="text-slate-500 text-sm italic">No se encuentra referencia específica en esta fuente.</p>
+                  )}
+                </div>
+            ))}
+          </div>
+        ) : (
+          <p class="text-slate-600">No hay fuentes disponibles.</p>
+        )}
       </div>
 
       <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
@@ -336,17 +344,65 @@ try {
           </li>
         </ul>
       </div>
+    </div>
 
-      <div class="mt-8 pt-8 border-t border-slate-200">
-        <h3 class="text-lg font-bold text-slate-900 mb-4">🎵 Canciones Relacionadas</h3>
-        <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
-          <h4 class="font-bold text-slate-900">"Tradiciones Santiagueñas"</h4>
-          <p class="text-slate-600 text-sm mt-1">Folklore Argentino</p>
-          <a href="https://www.cancioneros.com/letras/cancion/42098/tradiciones-santiaguenas-folklore-argentino" target="_blank" rel="noopener" class="text-orange-600 hover:underline text-sm">
-            Ver letra completa
-          </a>
+    <!-- Tab: Canciones -->
+    <div id="content-canciones" class="tab-content hidden">
+      <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6">
+        🎵 Canciones Relacionadas
+      </h2>
+      
+      {cancionesRelacionadas.length > 0 ? (
+        <div class="space-y-8">
+          {cancionesRelacionadas.map((cancion) => {
+            const videoId = getYouTubeId(cancion.youtube_url);
+            return (
+              <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <div class="flex flex-wrap items-start justify-between gap-2 mb-4">
+                  <div>
+                    <h3 class="font-bold text-slate-900 text-xl font-['DM_Serif_Display']">{cancion.titulo}</h3>
+                    <p class="text-slate-600 text-sm">{cancion.autor}</p>
+                  </div>
+                </div>
+
+                {videoId && videoId !== 'example' ? (
+                  <div class="mb-6">
+                    <div class="aspect-video rounded-lg overflow-hidden bg-slate-900">
+                      <iframe
+                        width="100%"
+                        height="100%"
+                        src={`https://www.youtube.com/embed/${videoId}`}
+                        title={cancion.titulo}
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        class="w-full h-full"
+                      ></iframe>
+                    </div>
+                  </div>
+                ) : (
+                  <div class="mb-6 p-4 bg-slate-100 rounded-lg text-center">
+                    <p class="text-slate-500 text-sm">Video no disponible</p>
+                  </div>
+                )}
+
+                <div class="bg-white rounded-lg p-4 border border-slate-200">
+                  <h4 class="font-bold text-slate-900 mb-3 flex items-center gap-2">
+                    <span>📝</span> Letra
+                  </h4>
+                  <div class="text-slate-700 whitespace-pre-line text-sm leading-relaxed max-h-64 overflow-y-auto pr-2">
+                    {cancion.letra}
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
-      </div>
+      ) : (
+        <div class="bg-orange-50 rounded-xl p-6 border border-orange-200">
+          <p class="text-slate-600">No hay canciones relacionadas con este mito en nuestra base de datos.</p>
+        </div>
+      )}
     </div>
 
     <div class="mt-12 pt-8 border-t border-slate-200">
@@ -359,16 +415,41 @@ try {
     </div>
   </article>
 
+  <!-- Modal para contenido de fuentes -->
+  <div id="fuente-modal" class="fixed inset-0 bg-black/50 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-xl max-w-2xl w-full max-h-[80vh] overflow-hidden shadow-2xl">
+      <div class="bg-orange-500 text-white p-4 flex items-center justify-between">
+        <h3 id="modal-title" class="font-bold text-lg font-['DM_Serif_Display']"></h3>
+        <button onclick="closeModal()" class="text-white/80 hover:text-white transition-colors">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto max-h-[60vh]">
+        <p id="modal-content" class="text-slate-700 leading-relaxed whitespace-pre-line"></p>
+      </div>
+      <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+        <button onclick="closeModal()" class="px-4 py-2 bg-slate-200 text-slate-700 rounded-lg hover:bg-slate-300 transition-colors">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script is:inline>
     function switchTab(tabName) {
+      // Hide all content
       document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
       document.getElementById('content-' + tabName).classList.remove('hidden');
       
+      // Reset all tabs
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('text-orange-600', 'border-orange-600', 'bg-orange-50/50');
         btn.classList.add('text-slate-600', 'border-transparent');
       });
       
+      // Activate selected tab
       document.getElementById('tab-' + tabName).classList.remove('text-slate-600', 'border-transparent');
       document.getElementById('tab-' + tabName).classList.add('text-orange-600', 'border-orange-600', 'bg-orange-50/50');
     }
@@ -386,5 +467,33 @@ try {
         }, 2000);
       });
     }
+
+    function openModal(fuenteKey, title, content) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-content').textContent = content;
+      document.getElementById('fuente-modal').classList.remove('hidden');
+      document.getElementById('fuente-modal').classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('fuente-modal').classList.add('hidden');
+      document.getElementById('fuente-modal').classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal on backdrop click
+    document.getElementById('fuente-modal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeModal();
+      }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
   </script>
 </Layout>

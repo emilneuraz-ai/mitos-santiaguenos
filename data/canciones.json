@@ -1,0 +1,60 @@
+{
+  "canciones": [
+    {
+      "titulo": "Tradiciones Santiagueñas",
+      "autor": "Carlos Carabajal / Pablo Trullenque",
+      "letra": "Santiago noble provincia\nenduendada de leyendas\nvoy a hundirme en tus arcanos\nen busca de tus creencias.\n\nSantiago, vino y garganta\nde las coplas vidaleras.\n\nUn rasguido de guitarra\nanunciando chacareras\nun violinista endiablado\nhasta sumamao me lleva\npromesantes rezan bailes\nen la fiesta sumamera.\n\nDesgarrando atardeceres\ncon eternas letanías\na crespín anda llamando\nsu mujer arrepentida\nhay tiempo para llorarle\ndijo cuando el se moría.\n\nRelatos de aparecidos\norillando los braseros,\nalabanzas, reza-bailes,\nmúsicos salamanqueros,\nson costumbres ancestrales\nde Santiago del Estero.\n\nLa llamaban Telesita\nalma de los bailes era\nmurió quemada en el monte\nhoy su nombre se venera\nes santa de los perdidos\ny habita en la chacarera.\n\nGrito fiero que estremece\nquebrachos machaos de siglos\nllanto llamador de hermano\nque en la leyenda hizo nido.\n\nEl Kacuy anda penando\nlos rigores de un castigo.\n\nMete miedo su alarido\npor los ojos echa fuego\ncorre arrastrando cadenas\npor los caminos desiertos;\nle llaman el alma mula\ny anda purgando un incesto.\n\nRelatos de aparecidos\norillando los braseros,\nalabanzas, reza-bailes,\nmúsicos salamanqueros,\nson costumbres ancestrales\nde Santiago del Estero.",
+      "youtube_url": "https://www.youtube.com/watch?v=64MIixlZI5w",
+      "mitos_mencionados": ["Telesita", "Crespín", "Kakuy", "Almamula", "Salamanca"]
+    },
+    {
+      "titulo": "El Linyerita",
+      "autor": "Carlos Infante",
+      "letra": "En un barrio de Santiago\nAhí una cruz milagrosa\nLas chinitas y los changos\nLe llevan fragantes rosas\n\nPrender velas día y noche\nEn la cruz del linyerita\nRezos plegarias promesas\nBrindan al alma bendita\n\n\"Cuentan que una noche oscura y en un boliche cercano,\nestaban unos paisanos,\ntruqueando muy divertidos de pronto entra un mal vestido\ny andrajoso como quiera,\nera un barbudo linyera quien sabe de ande ha venido.\n\nCon su amable sonrisa a tuítos lo saludo\ny al bolichero pidió pa' poder matar su hambre\nle vendiera queso fiambre, un pan un litio i' vino\ny de un pañuelo cochino desato un billete grande.\n\nSe cobro el bolichero, dando el vuelto al linyerita\ny agarrando sus cositas rumbo a Huaico Hondo marcho\ny cuando a las vías llego lo alcanzaron dos matreros,\nle quitaron su dinero y allí tendido quedo\nen un gran charco de sangre lo hallaron de madrugada,\ndos profundas puñaladas cortaron su triste vida\ny la gente conmovida viendo muerto al linyerita\nllevan flores y velitas para esa alma desconocida.\n\nQuien era el linyerita?? nunca se pudo saber\npero el siempre ah de tener una velita prendida...\"\n\nA un costado de la acequia\nDe la vía y del camino\nLa cruz de palo se encuentra\nMarcando un triste destino\nLinyerita de Huaico Hondo\nQuien sabe de ande as venido",
+      "youtube_url": "https://www.youtube.com/watch?v=example",
+      "mitos_mencionados": ["Linyerita"]
+    },
+    {
+      "titulo": "Hermano Kakuy",
+      "autor": "Juan Carlos Carabajal / Jacinto Piedra",
+      "letra": "Cuenta la gente\nallá en el pago\nlo sucedido\nentre dos hermanos\n\nCuando él volvía\nde la jornada\nagua y comida\njamás encontraba.\n\nCansado un día\nde soportarla\nla llevó al monte\npara castigarla\n\nCon triste grito\nbusca a su hermano\nkakuy se llama\ny vive penando.\n\nSobre de un árbol\nélla esperaba\nmientras el mozo\nde allí se alejaba.\n\nA sus reclamos\nlos llevó el viento\ny en su garganta\nquejumbre y lamento\n\nDe esta leyenda\nno hay que olvidarse\nque los hermanos\nno dejen de amarse.",
+      "youtube_url": "https://www.youtube.com/watch?v=Llan-kNnsyE",
+      "mitos_mencionados": ["Kakuy"]
+    },
+    {
+      "titulo": "La Telesita",
+      "autor": "Los Manseros Santiagueños",
+      "letra": "Telesita la manga mota\ntus ropitas están rotas\npor las costas del Salado\ntus pasos van extraviados.\n\nNo preguntes por tu amor\nporque nunca lo hallarás\nun consuelo a tu dolor\nen el baile encontrarás.\n\nPor esos campos de Dios\nte lleva tu corazón\nsin saber que tu danzar\nes tan solo una ilusión.\n\nRezabaile del querer\ncon su música llevó\npies desnudos bajo el sol\nla Telesita llegó.\n\nY así te verán bailando\nloca en cada amanecer\ncomo metida la danza\nmuy adentro de tu ser.\n\nAy! Telésfora Castillo\ntus ojos no tienen brillo\nlo has perdido tras el monte\no buscando el horizonte.\n\nCon un bombo sonador\ny un violín sentimental\nun cieguito al enconrdao'\nel baile va a comenzar.\n\nTu esperanza se perdió\ndele bailar y bailar\nlleva tu pecho un dolor\npero no sabes llorar.\n\nPobre niña que un fogón\ntu cuerpito calcinó\ny en la noche de los tiempos\ntodo el pueblo te lloró.",
+      "youtube_url": "https://www.youtube.com/watch?v=64MIixlZI5w",
+      "mitos_mencionados": ["Telesita"]
+    },
+    {
+      "titulo": "La Almamula",
+      "autor": "Los Tobas (Letra: M. Lescano - Música: Miguel Agüero)",
+      "letra": "En las noches muy de Luna dicen que sale a pasear\nPor las orillas del pueblo un bicho fiero sin orejas\nDicen que es un almamula con las ancas overas\nCon un hachazo en el pupo y un ruido fiero de cadenas\n\nUn viejo corajudo se le quiso abalanzar\nLo largó a la plumería se fue variando pa'l vinalar\n\nCuidadito cuidadito cuidao con la almamula\nCuando ande por tala pozo les ha'i comer nomás las orejas\n\nOtro viejo la esperó pero había sido brujo\nPor la noche la atajó con un cabestro y un cencerro\nPor fin la pudo enlazar pero de nada valió\nPorque le quemó los tientos con todo el fuego que vomitó\n\nPobre viejo, pobre viejo que susto que se llevó\nY su comadre afligida le dio té hirviendo de palancho\n\nCuidadito cuidadito cuidao con la almamula\nCuando ande por tala pozo les ha'i comer nomás las orejas",
+      "youtube_url": "https://www.youtube.com/watch?v=fCPdwF3wgpU",
+      "mitos_mencionados": ["Almamula"]
+    },
+    {
+      "titulo": "La Salamanca",
+      "autor": "Arturo Dávalos (Los Cantores del Alba)",
+      "letra": "Con la diabla en las ancas Mandinga llegó,\nazufrando la noche lunar.\nDesmontó del caballo y el baile empezó,\ncon la cola marcando el compás.\n\nUn rococo de la isla cantaba su amor\na una sapa vestida de azul.\nCarboncillo bailaba, luciendo una flor,\nque a los ciegos devuelve la luz.\n\nSocavón, donde el alba muere al salir:\nsalamanca del cerro natal.\nEn las noches de luna se suele sentir\na Mandinga y a los diablos cantar.\n\nJineteando, una escoba cruzaba el añil\nde los cielos: la bruja mayor;\nla lechuza en el hombro y el gran tenedor\ndisparándole a la Cruz del Sur.\n\nUn quirquincho barbudo tocaba el violín\ny un zorrino, con voz de tenor,\ndesgarraba el silencio con un yaraví,\nque Mandinga a cantar le enseñó.",
+      "youtube_url": "https://www.youtube.com/watch?v=example",
+      "mitos_mencionados": ["Salamanca"]
+    },
+    {
+      "titulo": "Sachayoj, el dueño del monte",
+      "autor": "Graciela Mendoza",
+      "letra": "Vidala en lengua quichua\n\nSachayoj, el dueño del monte\nProtector del bosque y sus criaturas\nVive en las profundidades del monte santiagueño\nGuardián de los secretos de la naturaleza\n\nEl Sachayoj del quichua 'sacha' (bosque) + '-yoj' (el que tiene)\nEs el señor del bosque, el protector del monte\nEn Santiago del Estero su leyenda perdura\nEntre los quebrachos y el monte nativo",
+      "youtube_url": "https://www.youtube.com/watch?v=NFQBGASovD4",
+      "mitos_mencionados": ["Sachayoj"]
+    },
+    {
+      "titulo": "Mayu Maman",
+      "autor": "Dúo Coplanacu",
+      "letra": "Mayu Maman, la madre del río\nGuardiana de las aguas del Dulce\nSe manifiesta como mujer de belleza sobrenatural\nCon una cabellera interminable\n\nProtectora de la fauna acuática\nJuez de los que dañan las aguas\nLos challueros santiagueños la veneran\nPasando horas sumergidos en su reino\n\nMayu Maman, espíritu del río\nTu presencia se siente en la corriente\nEn Santiago del Estero tu leyenda vive\nEntre los pescadores y sus cantos",
+      "youtube_url": "https://www.youtube.com/watch?v=8GhQwYI9bmA",
+      "mitos_mencionados": ["Mayu Maman"]
+    }
+  ]
+}
