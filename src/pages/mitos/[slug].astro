@@ -5,18 +5,129 @@ import { join } from 'path';
 
 export async function getStaticPaths() {
   const mitos = [
-    { slug: 'el-sachayoj', title: 'El Sachayoj' },
-    { slug: 'la-mayu-maman', title: 'La Mayu Maman' },
-    { slug: 'el-pampayoj', title: 'El Pampayoj' },
-    { slug: 'la-uritu-orko', title: 'La Uritu Orko' },
-    { slug: 'la-salamanca', title: 'La Salamanca' },
-    { slug: 'el-kakuy', title: 'El Kakuy' },
-    { slug: 'el-crespin', title: 'El Crespín' },
-    { slug: 'el-runauturungo', title: 'El Runauturungo' },
-    { slug: 'el-toro-yacu', title: 'El Toro Yacu' },
-    { slug: 'la-telesita', title: 'La Telesita' },
-    { slug: 'el-supay', title: 'El Supay' },
-    { slug: 'la-almamula', title: 'La Almamula' }
+    { 
+      slug: 'el-sachayoj', 
+      title: 'El Sachayoj',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Mitos y Leyendas de Santiago del Estero', autor: 'Tomás Bathata', editorial: 'Universitas Editorial' }
+      ],
+      canciones: [
+        { titulo: 'Tradiciones Santiagueñas', tipo: 'Folklore', referencia: 'Mención al monte y sus guardianes' }
+      ]
+    },
+    { 
+      slug: 'la-mayu-maman', 
+      title: 'La Mayu Maman',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Creencias Populares Santiagueñas', autor: 'CCB Santiago', tipo: 'Digital' }
+      ],
+      canciones: [
+        { titulo: 'Vidalas del río Salado', tipo: 'Vidalas', referencia: 'Tradición oral' }
+      ]
+    },
+    { 
+      slug: 'el-pampayoj', 
+      title: 'El Pampayoj',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' }
+      ],
+      canciones: [
+        { titulo: 'Chacareras de la pampa', tipo: 'Chacarera', referencia: 'Tradición oral' }
+      ]
+    },
+    { 
+      slug: 'la-uritu-orko', 
+      title: 'La Uritu Orko',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Leyendas Santiagueñas', tipo: 'Recopilación', editorial: 'Scribd' }
+      ],
+      canciones: []
+    },
+    { 
+      slug: 'la-salamanca', 
+      title: 'La Salamanca',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' }
+      ],
+      canciones: [
+        { titulo: 'Tradiciones Santiagueñas', tipo: 'Folklore', referencia: '"Músicos salamanqueros"' }
+      ]
+    },
+    { 
+      slug: 'el-kakuy', 
+      title: 'El Kakuy',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Mitos y Leyendas de Santiago del Estero', autor: 'Tomás Bathata', editorial: 'Universitas Editorial' }
+      ],
+      canciones: [
+        { titulo: 'Tradiciones Santiagueñas', tipo: 'Folklore', referencia: '"El Kacuy anda penando los rigores de un castigo"' }
+      ]
+    },
+    { 
+      slug: 'el-crespin', 
+      title: 'El Crespín',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Creencias Populares Santiagueñas', autor: 'CCB Santiago', tipo: 'Digital' }
+      ],
+      canciones: [
+        { titulo: 'Tradiciones Santiagueñas', tipo: 'Folklore', referencia: '"A crespín anda llamando su mujer arrepentida"' }
+      ]
+    },
+    { 
+      slug: 'el-runauturungo', 
+      title: 'El Runauturungo',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' }
+      ],
+      canciones: []
+    },
+    { 
+      slug: 'el-toro-yacu', 
+      title: 'El Toro Yacu',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' }
+      ],
+      canciones: []
+    },
+    { 
+      slug: 'la-telesita', 
+      title: 'La Telesita',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Mitos y Leyendas de Santiago del Estero', autor: 'Tomás Bathata', editorial: 'Universitas Editorial' },
+        { titulo: 'Creencias Populares Santiagueñas', autor: 'CCB Santiago', tipo: 'Digital' }
+      ],
+      canciones: [
+        { titulo: 'Tradiciones Santiagueñas', tipo: 'Folklore', referencia: '"La llamaban Telesita, alma de los bailes era, murió quemada en el monte"' },
+        { titulo: 'Añoranzas', tipo: 'Chacarera', autor: 'Himno cultural de Santiago del Estero (1997)' }
+      ]
+    },
+    { 
+      slug: 'el-supay', 
+      title: 'El Supay',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Alero Quichua Santiagueño', tipo: 'Web', url: 'https://aleroquichua.org.ar' }
+      ],
+      canciones: []
+    },
+    { 
+      slug: 'la-almamula', 
+      title: 'La Almamula',
+      libros: [
+        { titulo: 'El Folklore de Santiago del Estero', autor: 'Orestes Di Lullo', año: '1943', editorial: 'Universidad Nacional de Tucumán' },
+        { titulo: 'Análisis de la Leyenda Alma Mula', autor: 'Dr. Jose Uñates', tipo: 'Ensayo' },
+        { titulo: 'Alero Quichua Santiagueño', tipo: 'Web', url: 'https://aleroquichua.org.ar' }
+      ],
+      canciones: [
+        { titulo: 'Tradiciones Santiagueñas', tipo: 'Folklore', referencia: '"Le llaman el alma mula y anda purgando un incesto"' }
+      ]
+    }
   ];
 
   return mitos.map(mito => ({
@@ -48,7 +159,7 @@ try {
 }
 ---
 
-<Layout title={mito.title} description={`Leyenda de ${mito.title} - Historia, historieta y guión cinematográfico`}>
+<Layout title={mito.title} description={`Leyenda de ${mito.title} - Historia, historieta, guión cinematográfico, libros y canciones`}>
   <article class="max-w-4xl mx-auto">
     <!-- Back link -->
     <a href="/" class="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6 transition-colors">
@@ -71,15 +182,18 @@ try {
 
     <!-- Tabs -->
     <div class="mb-8">
-      <div class="flex border-b border-slate-200">
-        <button id="tab-historia" class="tab-btn px-6 py-3 text-sm font-medium text-orange-600 border-b-2 border-orange-600 bg-orange-50/50" onclick="switchTab('historia')">
+      <div class="flex flex-wrap border-b border-slate-200">
+        <button id="tab-historia" class="tab-btn px-4 py-3 text-sm font-medium text-orange-600 border-b-2 border-orange-600 bg-orange-50/50" onclick="switchTab('historia')">
           📖 Historia
         </button>
-        <button id="tab-historieta" class="tab-btn px-6 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('historieta')">
+        <button id="tab-historieta" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('historieta')">
           🎨 Historieta
         </button>
-        <button id="tab-guion" class="tab-btn px-6 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('guion')">
+        <button id="tab-guion" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('guion')">
           🎬 Guión
+        </button>
+        <button id="tab-fuentes" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('fuentes')">
+          📚 Libros & 🎵 Canciones
         </button>
       </div>
     </div>
@@ -132,6 +246,100 @@ try {
       </div>
     </div>
 
+    <div id="content-fuentes" class="tab-content hidden">
+      <!-- Libros -->
+      <div class="mb-10">
+        <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6 flex items-center">
+          <span class="text-3xl mr-3">📚</span> Libros y Fuentes Bibliográficas
+        </h2>
+        
+        {mito.libros && mito.libros.length > 0 ? (
+          <div class="space-y-4">
+            {mito.libros.map((libro) => (
+              <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 hover:border-orange-300 transition-colors">
+                <h3 class="font-bold text-slate-900 text-lg">{libro.titulo}</h3>
+                <p class="text-slate-600 mt-1">
+                  <span class="font-medium">Autor:</span> {libro.autor}
+                  {libro.año && <span class="ml-2">({libro.año})</span>}
+                </p>
+                {libro.editorial && (
+                  <p class="text-slate-500 text-sm mt-1">{libro.editorial}</p>
+                )}
+                {libro.tipo && (
+                  <span class="inline-block mt-2 px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">
+                    {libro.tipo}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p class="text-slate-500 italic">No se han encontrado referencias bibliográficas específicas para esta leyenda.</p>
+        )}
+      </div>
+
+      <!-- Canciones -->
+      <div>
+        <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6 flex items-center">
+          <span class="text-3xl mr-3">🎵</span> Canciones y Música
+        </h2>
+        
+        {mito.canciones && mito.canciones.length > 0 ? (
+          <div class="space-y-4">
+            {mito.canciones.map((cancion) => (
+              <div class="bg-orange-50 rounded-xl p-5 border border-orange-200">
+                <h3 class="font-bold text-slate-900 text-lg">{cancion.titulo}</h3>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span class="px-2 py-1 bg-white text-orange-700 text-xs rounded-full border border-orange-200">
+                    {cancion.tipo}
+                  </span>
+                  {cancion.autor && (
+                    <span class="px-2 py-1 bg-white text-slate-600 text-xs rounded-full border border-slate-200">
+                      {cancion.autor}
+                    </span>
+                  )}
+                </div>
+                {cancion.referencia && (
+                  <p class="text-slate-600 mt-3 text-sm italic border-l-2 border-orange-400 pl-3">
+                    "{cancion.referencia}"
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p class="text-slate-500 italic">No se han encontrado canciones específicas que mencionen esta leyenda.</p>
+        )}
+      </div>
+
+      <!-- Fuentes adicionales -->
+      <div class="mt-10 pt-8 border-t border-slate-200">
+        <h3 class="text-lg font-bold text-slate-900 mb-4">Fuentes de Consulta</h3>
+        <ul class="space-y-2 text-sm text-slate-600">
+          <li>
+            <a href="https://ccbsantiago.gob.ar/creencias-populares-santiaguenas-mitos-y-leyendas/" target="_blank" rel="noopener" class="text-orange-600 hover:underline">
+              Centro Cultural del Bicentenario - Santiago del Estero
+            </a>
+          </li>
+          <li>
+            <a href="https://aleroquichua.org.ar/sitio/mitos.php" target="_blank" rel="noopener" class="text-orange-600 hover:underline">
+              Alero Quichua Santiagueño
+            </a>
+          </li>
+          <li>
+            <a href="https://cancioneropopulardesantiagodelestero.blogspot.com/" target="_blank" rel="noopener" class="text-orange-600 hover:underline">
+              Cancionero Popular Santiagueño
+            </a>
+          </li>
+          <li>
+            <a href="https://www.cancioneros.com/letras/cancion/42098/tradiciones-santiaguenas-folklore-argentino" target="_blank" rel="noopener" class="text-orange-600 hover:underline">
+              Cancioneros.com - Tradiciones Santiagueñas
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <!-- Source -->
     <div class="mt-12 pt-8 border-t border-slate-200">
       <p class="text-sm text-slate-500">
@@ -141,7 +349,7 @@ try {
         </a>
       </p>
       <p class="text-xs text-slate-400 mt-2">
-        Contenido ampliado y adaptado con narrativa completa, historieta y guión cinematográfico.
+        Contenido ampliado y adaptado con narrativa completa, historieta, guión cinematográfico y referencias bibliográficas.
       </p>
     </div>
   </article>

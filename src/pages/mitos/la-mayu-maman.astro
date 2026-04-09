@@ -1,0 +1,375 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "La Mayu Maman - Mitos Santiagueños";
+const description = "La sirena de nuestros ríos. Hermosa mujer rubia que peina su cabellera con peine de oro y arrastra a los hombres al agua.";
+const slug = "la-mayu-maman";
+---
+
+<Layout title={title} description={description}>
+  <!-- Hero -->
+  <section class="relative mb-12">
+    <div class="text-center">
+      <span class="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-6">
+        Leyenda
+      </span>
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 font-['DM_Serif_Display'] text-slate-900">
+        La Mayu Maman
+      </h1>
+      <p class="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        La sirena de nuestros ríos. Hermosa mujer rubia que peina su cabellera con peine de oro y arrastra a los hombres al agua.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tabs -->
+  <div class="mb-12">
+    <div class="flex justify-center border-b border-slate-200 mb-8">
+      <button id="tab-historia" class="tab-btn px-6 py-3 text-sm font-medium text-orange-600 border-b-2 border-orange-600 transition-colors" data-tab="historia">
+        Historia
+      </button>
+      <button id="tab-historieta" class="tab-btn px-6 py-3 text-sm font-medium text-slate-500 hover:text-orange-600 transition-colors" data-tab="historieta">
+        Historieta
+      </button>
+      <button id="tab-guion" class="tab-btn px-6 py-3 text-sm font-medium text-slate-500 hover:text-orange-600 transition-colors" data-tab="guion">
+        Guión
+      </button>
+    </div>
+
+    <!-- Tab Content: Historia -->
+    <div id="content-historia" class="tab-content max-w-3xl mx-auto">
+      <div class="prose prose-slate prose-lg max-w-none">
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          En las orillas del río Salado, donde el agua se vuelve perezosa y los sauces lloran hasta tocar la superficie, las madres santiagueñas todavía susurran el nombre de La Mayu Maman cuando los niños se acercan demasiado al agua. "Cuidado con la madre del río", dicen, y en sus ojos hay un miedo que no es solo por los remolinos.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          La historia comienza mucho antes de que los españoles llegaran con sus cruces y sus caballos. En esa época, el río Salado era el camino de vida para los pueblos originarios que habitaban sus márgenes. Los comechingones, los sanavirones, los tonocoté —todos conocían a La Mayu Maman, aunque cada uno le daba un nombre diferente. Para todos, era la madre del agua, la que daba y la que quitaba.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          Doña Candelaria, la tejedora del pueblo de Los Telares, era descendiente de sanavirones por línea materna. A sus ochenta años, todavía tejía mantas en su telar de pie, y sus manos arrugadas movían los hilos con la precisión de setenta años de práctica. Pero lo que más sabía tejer eran historias.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          "La Mayu Maman no siempre fue mala", comenzaba, mientras sus dedos danzaban entre las lanas de colores tierra. "Antes era una mujer como cualquiera. Vivía en una ranchería cerca de donde ahora está la costanera de La Banda. Tenía tres hijos —tres varones hermosos como el sol— y un marido que la quería más que a la vida."
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          El problema llegó en forma de sequía. Un año en que el río se encogió hasta convertirse en un hilo de agua turbia, y la tierra se agrietó como piel de viejo. Los animales se morían, los cultivos se perdieron, y el hambre llegó a las puertas de cada rancho.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          El marido de la mujer —nadie recuerda su nombre, solo que era buen hombre— decidió ir al monte a buscar alimento. Prometió volver antes de la luna nueva. Pero la luna nueva llegó, y luego la llena, y el hombre no regresó.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          "La mujer enloqueció de dolor", continuaba Doña Candelaria, su voz bajando hasta convertirse en un susurro. "No dormía, no comía. Solo caminaba por la orilla del río, llamando a su marido, llamando a sus hijos que la seguían llorando. Y una noche, en la hora más oscura, escuchó una voz."
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          La voz venía del río mismo. Le prometió devolver a su marido si ella entregaba algo a cambio. La mujer, desesperada, ofreció todo: sus manos, sus ojos, su alma. Pero la voz del río quería algo más precioso.
+        </p>
+        <blockquote class="border-l-4 border-orange-500 pl-6 italic text-slate-600 my-8">
+          —Dame a tus hijos —dijo el agua—. Y te devolveré a tu marido.
+        </blockquote>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          La mujer se negó. Pero el río susurró promesas: su marido volvería sano y salvo, traería alimento, salvaría al pueblo. Y si ella no aceptaba... el hombre moriría solo en el monte, y sus hijos morirían de hambre junto a ella.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          "Esa noche", decía Doña Candelaria, deteniendo su tejido, "la mujer hizo lo impensable. Llevó a sus tres hijos a la orilla del río. Los abrazó uno por uno. Y cuando el agua se abrió como una boca negra... los empujó."
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          Los niños desaparecieron sin un grito. El río se cerró sobre ellos como si nada hubiera pasado. Y entonces, desde la oscuridad del monte, apareció el marido. Estaba vivo, traía un guanaco cazado, no entendía por qué su mujer lloraba desconsoladamente.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          "Cuando supo lo que había hecho", continuaba Doña Candelaria, limpiándose una lágrima, "el marido también enloqueció. Tomó su cuchillo y se lo clavó en el corazón allí mismo, en la orilla del río. La mujer, al verlo morir, corrió hacia el agua. Quería salvar a sus hijos, quería morir con ellos. Pero el río no la dejó entrar."
+        </p>
+        <blockquote class="border-l-4 border-orange-500 pl-6 italic text-slate-600 my-8">
+          —Ahora sos mía —dijo el agua—. Vivirás en mis aguas, llamando a otros niños. Y nunca, jamás, volverás a ver a los tuyos.
+        </blockquote>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          Desde entonces, La Mayu Maman vaga por las orillas del Salado. Se aparece como una mujer hermosa, de cabello largo y negro como el agua profunda, vestida con ropas blancas que nunca se mojan. Canta canciones de cuna, llama a los niños con promesas de juegos y tesoros. Y cuando un niño se acerca demasiado al agua... el río se lo traga.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          "Pero hay algo más", agregaba Doña Candelaria, y su voz temblaba. "Dicen que en las noches de tormenta, cuando el río crece furioso, se pueden escuchar cuatro voces. La madre, llamando. Y tres niños, respondiendo desde el fondo del agua."
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          Los ancianos del pueblo añaden un detalle más: La Mayu Maman no quiere hacer daño. Está condenada a llamar, a tentar, a llevarse a otros niños para llenar el vacío de los suyos. Es su castigo eterno. Y cada niño que se lleva... es otro hijo que ella llora en las profundidades del río Salado.
+        </p>
+        <p class="text-lg text-slate-700 leading-relaxed mb-6">
+          Por eso, en Santiago del Estero, las madres todavía repiten: "No jueguen cerca del agua. La Mayu Maman está esperando. Y tiene los brazos abiertos".
+        </p>
+      </div>
+    </div>
+
+    <!-- Tab Content: Historieta -->
+    <div id="content-historieta" class="tab-content hidden max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold font-['DM_Serif_Display'] text-slate-900 mb-8">Historieta</h2>
+      
+      <div class="space-y-12">
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 1: La Tejedora</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> Interior de una casa de adobe. Doña Candelaria, anciana de manos sabias, teje en su telar de pie. Un grupo de niños y niñas escucha atentamente sentados en el piso de tierra.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Doña Candelaria: "La Mayu Maman no siempre fue mala..."</li>
+              <li>• Niña: "¿Quién era antes, doña Cande?"</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina, estilo artesanal santiagueño. Anciana tejiendo en telar de pie, lanas de colores tierra. Niños sentados en piso de tierra escuchando. Interior rústico de adobe, luz dorada entrando por ventana. Colores: ocres, marrones, rojos tierra, azules del textil. Estilo: grabado popular argentino, textura artesanal.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 2: La Familia Feliz</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> Flashback. Una mujer joven y hermosa juega con tres niños pequeños en la orilla del río Salado. El marido observa sonriendo. El paisaje es de abundancia: río caudaloso, vegetación verde.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Madre: "¡Vengan, mis amores! ¡El agua está fresca!"</li>
+              <li>• Niño mayor: "¡Mamá, mira lo que encontré!"</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina. Familia feliz en orilla del río Salado. Madre joven con niños jugando. Marido observando sonriente. Río caudaloso, sauces verdes, abundancia. Paleta: verdes vibrantes, azules del agua, ropas blancas. Estilo: grabado popular, atmósfera idílica y serena.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 3: La Sequía</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> El mismo paisaje, devastado. El río es apenas un hilo de agua turbia. La tierra agrietada. La madre mira el horizonte con angustia. Los niños están flacos, el marido prepara sus cosas para partir.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Marido: "Volveré antes de la luna nueva, amor. Con alimento."</li>
+              <li>• Madre: "¡No te vayas! ¡El monte se está llevando a todos!"</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina. Paisaje devastado por sequía. Río reducido a hilo de agua turbia. Tierra agrietada. Madre angustiada, niños famélicos. Atmósfera desoladora. Colores: ocres quemados, marrones secos, cielo blanquecino. Estilo: grabado popular, textura áspera.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 4: La Locura</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> Noche. La madre camina despeinada por la orilla del río seco. Sus hijos la siguen llorando. La luna llena ilumina la escena con luz fantasmal. Una voz emerge del agua.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Voz del río: "Dame a tus hijos... y te devolveré a tu marido..."</li>
+              <li>• Madre: "¿Quién... quién habla?"</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina con elementos sobrenaturales. Mujer despeinada caminando por orilla de río seco. Niños llorando detrás. Luna llena, sombras alargadas. Ondas en el agua formando una cara. Atmósfera inquietante. Colores: azules nocturnos, plateados, negros. Estilo: grabado popular con toques de arte fantástico.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 5: El Sacrificio</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> La orilla del río. El agua se abre como una boca negra. La madre abraza a sus tres hijos con desesperación. Sus rostros muestran confusión y miedo.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Madre: "Perdónenme, mis amores... perdónenme..."</li>
+              <li>• Niño mayor: "¿Mamá? ¿Qué haces?"</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina, escena dramática. Madre abrazando a tres niños en orilla de río. Agua oscura abriéndose como boca. Expresiones de terror y confusión. Luna llena iluminando. Colores: negros, azules profundos, blancos fantasmales. Estilo: grabado popular, atmósfera de tragedia.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 6: El Regreso</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> El marido emerge del monte con un guanaco cazado. La madre está arrodillada en la orilla, sollozando. Los niños han desaparecido. El río está tranquilo, como si nada hubiera pasado.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Marido: "¿Qué pasó? ¿Dónde están los niños?"</li>
+              <li>• Madre: *(sollozando sin poder hablar)*</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina. Hombre con guanaco en hombros emergiendo del monte. Mujer arrodillada llorando en orilla de río. Ausencia de niños. Atmósfera de desolación. Colores: grises, azules oscuros, tierra apagada. Estilo: grabado popular, escena de tragedia griega.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 7: La Transformación</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> El marido yace muerto, cuchillo en el pecho. La mujer corre hacia el río para morir, pero el agua la rechaza. Comienza su transformación: su cabello se vuelve negro como el agua, sus ojos brillan con luz sobrenatural.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Voz del río: "Ahora sos mía. Vivirás en mis aguas..."</li>
+              <li>• Madre: "¡No! ¡Mis hijos! ¡Quiero a mis hijos!"</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina con elementos sobrenaturales. Transformación de mujer en criatura acuática. Cabello negro flotando como agua. Ojos brillantes. Cadáver de hombre en orilla. Río oscuro. Colores: negros, azules profundos, blancos etéreos. Estilo: grabado popular con arte fantástico.</p>
+          </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-slate-900 mb-4">Escena 8: La Mayu Maman</h3>
+          <p class="text-slate-600 mb-4"><strong>Descripción:</strong> La criatura completa: mujer hermosa de cabellera negra y larga, vestida de blanco, emergiendo del agua. Llama a un niño que juega en la orilla. Su expresión es de tristeza infinita.</p>
+          <div class="bg-white rounded-lg p-4 mb-4">
+            <p class="text-sm text-slate-500 mb-2">Diálogo:</p>
+            <ul class="text-slate-700 space-y-1">
+              <li>• Mayu Maman: *(cantando)* "Vení, amorcito... tengo juegos y tesoros..."</li>
+              <li>• Narrador: "Desde entonces, La Mayu Maman vaga por las orillas del Salado..."</li>
+            </ul>
+          </div>
+          <div class="bg-orange-50 rounded-lg p-4">
+            <p class="text-sm text-orange-700 font-medium mb-1">Prompt para IA:</p>
+            <p class="text-sm text-slate-600 italic">Ilustración folklórica argentina. Sirena de río con cabellera negra larga, vestido blanco, emergiendo de aguas oscuras. Expresión de tristeza eterna. Niebla sobre el agua. Paleta: azules oscuros, blancos fantasmales, negros. Estilo: grabado popular, atmósfera de cuento de hadas oscuro.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Content: Guión -->
+    <div id="content-guion" class="tab-content hidden max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold font-['DM_Serif_Display'] text-slate-900 mb-8">Guión para Corto</h2>
+      
+      <div class="bg-slate-50 rounded-2xl p-8 mb-8">
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <div>
+            <p class="text-sm text-slate-500">Título:</p>
+            <p class="font-bold text-slate-900">LA MAYU MAMAN</p>
+          </div>
+          <div>
+            <p class="text-sm text-slate-500">Duración:</p>
+            <p class="font-bold text-slate-900">18 minutos</p>
+          </div>
+          <div>
+            <p class="text-sm text-slate-500">Género:</p>
+            <p class="font-bold text-slate-900">Terror folclórico / Drama</p>
+          </div>
+          <div>
+            <p class="text-sm text-slate-500">Ubicación:</p>
+            <p class="font-bold text-slate-900">Río Salado, Santiago del Estero</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 1 - LA TEJEDORA / INTERIOR - DÍA</h3>
+          <p class="text-slate-700 mb-4">Interior de una casa de adobe. DOÑA CANDELARIA (80 años) teje en su telar. Un grupo de NIÑOS escucha atentamente.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700"><strong>DOÑA CANDELARIA</strong><br>La Mayu Maman no siempre fue mala. Antes era una mujer como cualquiera...</p>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 2 - LA FAMILIA / EXTERIOR - DÍA (FLASHBACK)</h3>
+          <p class="text-slate-700 mb-4">Orilla del río Salado. La MADRE juega con sus TRES HIJOS. El PADRE observa sonriendo. El río está caudaloso, la vegetación verde.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700"><strong>MADRE</strong><br>¡Vengan, mis amores! ¡El agua está fresca!</p>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 3 - LA SEQUÍA / EXTERIOR - DÍA</h3>
+          <p class="text-slate-700 mb-4">El mismo lugar, devastado. El río es un hilo de agua turbia. La tierra agrietada.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700"><strong>PADRE</strong><br>Volveré antes de la luna nueva, amor. Con alimento.</p>
+            <p class="text-slate-700 mt-2"><strong>MADRE</strong><br>¡No te vayas! ¡El monte se está llevando a todos!</p>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 4 - LA VOZ / EXTERIOR - NOCHE</h3>
+          <p class="text-slate-700 mb-4">La madre camina despeinada por la orilla del río seco. Sus hijos la siguen llorando.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700 italic">Una voz emerge del agua.</p>
+            <p class="text-slate-700 mt-2"><strong>VOZ DEL RÍO</strong><br>Dame a tus hijos... y te devolveré a tu marido...</p>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 5 - EL SACRIFICIO / EXTERIOR - NOCHE</h3>
+          <p class="text-slate-700 mb-4">El agua se abre como una boca negra. La madre abraza a sus hijos con desesperación.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700"><strong>MADRE</strong> (sollozando)<br>Perdónenme, mis amores... perdónenme...</p>
+            <p class="text-slate-700 mt-2 italic">Empuja a los niños al agua. El río se cierra sobre ellos.</p>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 6 - LA TRANSFORMACIÓN / EXTERIOR - NOCHE</h3>
+          <p class="text-slate-700 mb-4">El padre aparece con el guanaco. Ve a su mujer arrodillada, sollozando. Comprende.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700"><strong>PADRE</strong> (desesperado)<br>¿Qué hiciste...? ¡¿QUÉ HICISTE?!</p>
+            <p class="text-slate-700 mt-2 italic">Toma su cuchillo y se lo clava en el corazón.</p>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 7 - LA MALDICIÓN / EXTERIOR - NOCHE</h3>
+          <p class="text-slate-700 mb-4">La mujer corre hacia el agua para morir. El río la rechaza.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700"><strong>VOZ DEL RÍO</strong><br>Ahora sos mía. Vivirás en mis aguas, llamando a otros niños...</p>
+            <p class="text-slate-700 mt-2 italic">Su cabello se vuelve negro como el agua. Sus ojos brillan.</p>
+          </div>
+        </div>
+
+        <div class="border-l-4 border-orange-500 pl-6">
+          <h3 class="text-lg font-bold text-slate-900 mb-2">ESCENA 8 - EL PRESENTE / EXTERIOR - NOCHE</h3>
+          <p class="text-slate-700 mb-4">Volvemos a Doña Candelaria. Afuera, una tormenta se acerca.</p>
+          <div class="bg-white rounded-lg p-4">
+            <p class="text-slate-700"><strong>DOÑA CANDELARIA</strong><br>Dicen que en las noches de tormenta... se pueden escuchar cuatro voces...</p>
+            <p class="text-slate-700 mt-2 italic">Un trueno. Desde lejos, el sonido de una madre llamando... y tres niños respondiendo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 bg-orange-50 rounded-2xl p-8">
+        <h3 class="text-xl font-bold text-slate-900 mb-4">Notas de Producción</h3>
+        <ul class="space-y-2 text-slate-700">
+          <li><strong>Fotografía:</strong> Contraste entre la abundancia inicial (colores verdes y azules) y la sequía (ocres y marrones). La transformación usa luces azuladas.</li>
+          <li><strong>Sonido:</strong> El río como personaje. Sonido de agua que se transforma en voces.</li>
+          <li><strong>Efectos:</strong> Maquillaje para la transformación. Agua que se comporta de manera antinatural.</li>
+          <li><strong>Locaciones:</strong> Río Salado o afluentes. Preferir lugares con sauces.</li>
+          <li><strong>Música:</strong> Cantos de cuna tradicionales distorsionados, sonidos de agua como percusión.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <div class="text-center mt-16">
+    <a href="/" class="btn-secondary px-8 py-4 rounded-full font-medium inline-block">
+      ← Volver al inicio
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab-btn');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+          const targetTab = this.getAttribute('data-tab');
+
+          tabs.forEach(t => {
+            t.classList.remove('text-orange-600', 'border-b-2', 'border-orange-600');
+            t.classList.add('text-slate-500');
+          });
+          this.classList.remove('text-slate-500');
+          this.classList.add('text-orange-600', 'border-b-2', 'border-orange-600');
+
+          contents.forEach(c => {
+            c.classList.add('hidden');
+          });
+          document.getElementById('content-' + targetTab).classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</Layout>
