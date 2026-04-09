@@ -146,7 +146,7 @@ const { mito } = Astro.props;
 const fuentesData = fuentesPorMito[mito.slug] || { fuentes: [] };
 
 // Leer contenido del archivo
-let contenido = { historia: '', historieta: '', guion: '' };
+let contenido = { historia: '', escenas: [], guion: '' };
 try {
   const filePath = join(process.cwd(), 'contenido', `${mito.slug}-completo.md`);
   const fileContent = readFileSync(filePath, 'utf-8');
@@ -155,9 +155,39 @@ try {
   const historietaMatch = fileContent.match(/## Historieta\n\n([\s\S]*?)(?=\n## Guion|$)/);
   const guionMatch = fileContent.match(/## Guion para Corto[^\n]*\n\n([\s\S]*?)$/);
   
+  // Parsear escenas de la historieta
+  const escenasRaw = historietaMatch ? historietaMatch[1].trim() : '';
+  const escenas = [];
+  const escenaBlocks = escenasRaw.split('### Escena').filter(Boolean);
+  
+  for (const block of escenaBlocks) {
+    const lines = block.trim().split('\n');
+    const tituloLine = lines[0] || '';
+    const titulo = tituloLine.replace(':', '').trim();
+    
+    let descripcion = '';
+    let dialogo = '';
+    let prompt = '';
+    
+    for (let i = 1; i < lines.length; i++) {
+      const line = lines[i].trim();
+      if (line.startsWith('**Diálogo:**')) {
+        dialogo = line.replace('**Diálogo:**', '').trim();
+      } else if (line.startsWith('**Prompt:**')) {
+        prompt = line.replace('**Prompt:**', '').trim();
+      } else if (line && !line.startsWith('**')) {
+        descripcion = line;
+      }
+    }
+    
+    if (titulo && descripcion) {
+      escenas.push({ titulo, descripcion, dialogo, prompt });
+    }
+  }
+  
   contenido = {
     historia: historiaMatch ? historiaMatch[1].trim() : '',
-    historieta: historietaMatch ? historietaMatch[1].trim() : '',
+    escenas: escenas,
     guion: guionMatch ? guionMatch[1].trim() : ''
   };
 } catch (e) {
@@ -189,9 +219,6 @@ try {
         <button id="tab-historia" class="tab-btn px-4 py-3 text-sm font-medium text-orange-600 border-b-2 border-orange-600 bg-orange-50/50" onclick="switchTab('historia')">
           📖 Historia
         </button>
-        <button id="tab-historieta" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('historieta')">
-          🎨 Historieta
-        </button>
         <button id="tab-guion" class="tab-btn px-4 py-3 text-sm font-medium text-slate-600 border-b-2 border-transparent hover:text-orange-600" onclick="switchTab('guion')">
           🎬 Guión
         </button>
@@ -207,39 +234,46 @@ try {
           <p class="mb-4 text-lg leading-relaxed">{parrafo}</p>
         ))}
       </div>
-    </div>
 
-    <div id="content-historieta" class="tab-content hidden">
-      <div class="space-y-8">
-        {contenido.historieta.split('### Escena').filter(Boolean).map((escena, i) => {
-          const lines = escena.trim().split('\n');
-          const titulo = lines[0]?.replace(':', '').trim() || `Escena ${i + 1}`;
-          const descripcion = lines.find(l => l.trim() && !l.includes('**'))?.trim() || '';
-          const dialogo = lines.find(l => l.includes('Diálogo:'))?.replace('**Diálogo:**', '').trim() || '';
-          const prompt = lines.find(l => l.includes('Prompt:'))?.replace('**Prompt:**', '').trim() || '';
+      {contenido.escenas.length > 0 && (
+        <div class="mt-12 pt-8 border-t-2 border-orange-200">
+          <h2 class="text-2xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-6 flex items-center gap-2">
+            <span>🎨</span> Escenas Ilustradas
+          </h2>
+          <p class="text-slate-600 mb-6">Visualizaciones clave de la historia para comprender mejor el relato:</p>
           
-          return (
-            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <h3 class="text-xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-3">
-                Escena {i + 1}: {titulo}
-              </h3>
-              <p class="text-slate-700 mb-4">{descripcion}</p>
-              {dialogo && (
-                <div class="bg-white rounded-lg p-4 mb-4 border-l-4 border-orange-500">
-                  <p class="text-sm text-slate-500 mb-1">Diálogo:</p>
-                  <p class="text-slate-800 italic">{dialogo}</p>
-                </div>
-              )}
-              {prompt && (
-                <div class="bg-orange-50 rounded-lg p-4">
-                  <p class="text-sm text-orange-600 font-medium mb-2">🎨 Prompt para IA:</p>
-                  <code class="text-xs text-slate-700 block break-words">{prompt}</code>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
+          <div class="space-y-8">
+            {contenido.escenas.map((escena, i) => (
+              <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+                <h3 class="text-xl font-bold text-slate-900 font-['DM_Serif_Display'] mb-3">
+                  Escena {i + 1}: {escena.titulo}
+                </h3>
+                <p class="text-slate-700 mb-4">{escena.descripcion}</p>
+                {escena.dialogo && (
+                  <div class="bg-white rounded-lg p-4 mb-4 border-l-4 border-orange-500">
+                    <p class="text-sm text-slate-500 mb-1">Diálogo:</p>
+                    <p class="text-slate-800 italic">{escena.dialogo}</p>
+                  </div>
+                )}
+                {escena.prompt && (
+                  <div class="bg-slate-100 rounded-lg p-4 border border-slate-300">
+                    <div class="flex items-center justify-between mb-2">
+                      <p class="text-sm font-medium text-slate-700">🎨 Descripción para ilustración:</p>
+                      <button 
+                        onclick="copyPrompt(this, '{escena.prompt.replace(/'/g, "\\'")}')"
+                        class="text-xs px-3 py-1 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors"
+                      >
+                        Copiar
+                      </button>
+                    </div>
+                    <code class="text-xs text-slate-600 block break-words bg-white p-3 rounded border border-slate-200">{escena.prompt}</code>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
 
     <div id="content-guion" class="tab-content hidden">
@@ -337,6 +371,20 @@ try {
       
       document.getElementById('tab-' + tabName).classList.remove('text-slate-600', 'border-transparent');
       document.getElementById('tab-' + tabName).classList.add('text-orange-600', 'border-orange-600', 'bg-orange-50/50');
+    }
+    
+    function copyPrompt(btn, text) {
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = '¡Copiado!';
+        btn.classList.add('bg-green-600');
+        btn.classList.remove('bg-orange-600');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('bg-green-600');
+          btn.classList.add('bg-orange-600');
+        }, 2000);
+      });
     }
   </script>
 </Layout>
