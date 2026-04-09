@@ -1,173 +1,259 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const historietas = [
+  {
+    slug: 'el-sachayoj',
+    title: 'El Sachayoj',
+    escenas: [
+      {
+        titulo: 'El Guardián del Monte',
+        descripcion: 'Don Aniceto camina por el monte buscando un quebracho blanco para reparar su rancho. Lleva su hacha afilada y no sabe que está siendo observado.',
+        prompt: 'Viejo montaraz con larga barba blanca hecha de hebras de lokontiy, cabello que se confunde con las lianas del monte, caminando descalzo entre espinas sin herirse, vestido con ropas de fibra vegetal, portando cuerno de chivo, monte santiagueño denso con quebrachos y algarrobos, luz dorada del atardecer filtrándose, atmósfera mística y protectora, ilustración de folklore argentino, estilo tradicional santiagueño, acuarela y tinta, paleta de colores tierra ocres y verdes oliva'
+      },
+      {
+        titulo: 'La Advertencia',
+        descripcion: 'El hachero levanta su herramienta contra un pimpollo y el aire se llena de un remolino de polvo. Una voz grave resuena: "No toques lo que no es tuyo".'
+      }
+    ]
+  },
+  {
+    slug: 'la-mayu-maman',
+    title: 'La Mayu Maman',
+    escenas: [
+      {
+        titulo: 'La Peinadora Dorada',
+        descripcion: 'En la orilla del río Dulce, una mujer de cabellera rubia como el trigo peina sus largos mechones con un peine de oro. Su reflejo en el agua muestra algo más...',
+        prompt: 'Mujer hermosa de cabellera rubia dorada sentada en roca del río, peinándose con peine de oro brillante, mitad inferior con cola de pez verde irisado, río Dulce de Santiago del Estero, aguas tranquilas reflejando luz dorada, vegetación de ribera, juncos y sauces, atmósfera serena pero misteriosa, ilustración de mitología fluvial argentina, estilo tradicional santiagueño, acuarela y tinta, colores azules verdosos y dorados'
+      },
+      {
+        titulo: 'El Abrazo del Río',
+        descripcion: 'Un pescador joven se acerca fascinado. La mujer se gira, sonríe, y sus brazos lo atrapan mientras el agua los envuelve en silencio.'
+      }
+    ]
+  },
+  {
+    slug: 'el-pampayoj',
+    title: 'El Pampayoj',
+    escenas: [
+      {
+        titulo: 'El Jinete Solitario',
+        descripcion: 'En las llanuras del centro de la provincia, un jinete cabalga sin descanso. A veces es un hombre, a veces un avestruz, a veces un guanaco.',
+        prompt: 'Jinete fantasmal cabalgando en llanura santiagueña infinita, figura que muta entre hombre con poncho y avestruz y guanaco, paisaje de llanura con cardones y pastizales, cielo amplio con nubes dramáticas, luz de tarde naranja, polvo levantándose de los cascos, atmósfera de vigilancia y protección, ilustración de folklore pampeano argentino, estilo tradicional, acuarela y tinta, colores ocres amarillos y azules'
+      },
+      {
+        titulo: 'La Lección del Cazador',
+        descripcion: 'El cazador despierta colgado de un árbol, su caballo suspendido en las alturas. Desde abajo, unos ojos brillantes lo observan sin piedad.'
+      }
+    ]
+  },
+  {
+    slug: 'la-uritu-orko',
+    title: 'La Uritu Orko',
+    escenas: [
+      {
+        titulo: 'La Búsqueda de Loros',
+        descripcion: 'Una familia sube a la serranía de Ojo de Agua. El hombre se ata una cuerda a la cintura para bajar por un barranco.',
+        prompt: 'Familia campesina en cumbre de serranía santiagueña, hombre con cuerda atada a cintura preparándose para descender barranco, mujer sosteniendo cuerda y niño pequeño cerca del precipicio, paisaje montañoso con rocas y cactus, cielo despejado, atmósfera de tensión y peligro inminente, ilustración de folklore santiagueño, estilo tradicional, acuarela y tinta, colores marrones grises y azules pálidos'
+      },
+      {
+        titulo: 'La Eterna Vigilia',
+        descripcion: 'Ahora una mujer solitaria se sienta en la cumbre de la roca, mirando al vacío. Esperará por siempre a quienes no volverán.'
+      }
+    ]
+  },
+  {
+    slug: 'la-salamanca',
+    title: 'La Salamanca',
+    escenas: [
+      {
+        titulo: 'La Entrada Prohibida',
+        descripcion: 'Entre los breñales más espesos, una cueva oculta emite música y risas. Un Cristo cabeza abajo marca la entrada.',
+        prompt: 'Entrada de cueva oculta entre breñales espesos del monte santiagueño, Cristo crucificado cabeza abajo colgando en entrada, animales repugnantes alrededor arañas peludas sapos escuerzos víboras, luz rojiza emanando de interior, música y sombras de baile visibles, atmósfera diabólica y tentadora, ilustración de folklore oscuro argentino, estilo tradicional, acuarela y tinta, colores rojos negros y naranjas'
+      },
+      {
+        titulo: 'El Aquelarre',
+        descripcion: 'Dentro, brujos y brujas danzan en círculo. El Supay preside desde su trono de huesos. El visitante debe elegir: el poder o la locura.'
+      }
+    ]
+  },
+  {
+    slug: 'el-kakuy',
+    title: 'El Kakuy',
+    escenas: [
+      {
+        titulo: 'La Traición en el Árbol',
+        descripcion: 'La hermana trepa por las ramas del algarrobo, cubierta con una manta para protegerse de las abejas. Su hermano la ayuda a subir...',
+        prompt: 'Mujer joven trepando alto árbol de algarrobo cubierta con manta blanca, hombre hermano en base del árbol sosteniendo escalera de ramas, colmenas de abejas visibles en ramas altas, monte santiagueño denso alrededor, luz de día, atmósfera de traición inminente, ilustración de folklore argentino, estilo tradicional santiagueño, acuarela y tinta, colores verdes marrones y blancos'
+      },
+      {
+        titulo: 'La Transformación',
+        descripcion: 'Desde lo alto, ella llama desesperada. Sus dedos se alargan, se curvan en garras. Plumas negras brotan de sus brazos mientras grita el nombre de quien la abandonó.'
+      }
+    ]
+  },
+  {
+    slug: 'el-crespin',
+    title: 'El Crespín',
+    escenas: [
+      {
+        titulo: 'La Bailanta',
+        descripcion: 'La esposa de Crespín danza sin cesar en la pulpería. La música no la deja ir, aunque su corazón le dice que debe volver.',
+        prompt: 'Mujer joven bailando en pulpería santiagueña tradicional, vestido de fiesta colorido, movimiento enérgico de zamba o chacarera, hombres sentados alrededor bebiendo vino, guitarra y caja visibles, ambiente nocturno cálido, luz de velas y faroles, atmósfera de diversión y abandono, ilustración de folklore argentino, estilo tradicional, acuarela y tinta, colores cálidos rojos naranjas y amarillos'
+      },
+      {
+        titulo: 'El Llanto Eterno',
+        descripcion: 'Convertida en pájaro, vuela de rama en rama llamando a su esposo muerto. "Crespín... Crespín..." El sonido se pierde en el monte.'
+      }
+    ]
+  },
+  {
+    slug: 'el-runauturungo',
+    title: 'El Runauturungo',
+    escenas: [
+      {
+        titulo: 'La Emboscada',
+        descripcion: 'El cazador y sus nueve compañeros esperan en la noche. Los ojos del tigre brillan como brasas entre la oscuridad del monte.',
+        prompt: 'Cazador solitario escondido en monte santiagueño de noche, fogata brillante en claro, ojos de tigre brillando como brasas en oscuridad de maleza, pellones en suelo simulando dormir, atmósfera de tensión y peligro inminente, ilustración de folklore argentino, estilo tradicional, acuarela y tinta, colores negros naranjas de fuego y amarillos de ojos'
+      },
+      {
+        titulo: 'La Verdad Revelada',
+        descripcion: 'En la tapera abandonada, una cabeza humana arrastrándose ofrece riquezas. El cazador aprieta el gatillo. El mal muere con estruendo.'
+      }
+    ]
+  },
+  {
+    slug: 'el-toro-yacu',
+    title: 'El Toro Yacu',
+    escenas: [
+      {
+        titulo: 'El Desafío',
+        descripcion: 'El criollo enfrenta al toro negro de cuernos dorados en la aguada. El forastero sonríe desde la orilla, sabiendo lo que vendrá.',
+        prompt: 'Criollo gaucho con lazo enfrentando toro negro gigante con cuernos dorados brillantes en aguada de río, agua hasta las rodillas, luna llena iluminando escena, forastero misterioso observando desde orilla con sonrisa, paisaje de río Dulce con vegetación de ribera, atmósfera de desafío y maldad, ilustración de folklore argentino, estilo tradicional, acuarela y tinta, colores azules oscuros dorados y negros'
+      },
+      {
+        titulo: 'La Huida',
+        descripcion: 'El toro corta el lazo y huye hacia el tala. Sus astas hunden en el tronco y brota agua. El diablo se lleva lo suyo.'
+      }
+    ]
+  },
+  {
+    slug: 'la-telesita',
+    title: 'La Telesita',
+    escenas: [
+      {
+        titulo: 'La Fiesta del Monte',
+        descripcion: 'Telésfora baila con alma y vida en la fiesta al aire libre. Su vestido blanco gira entre el polvo y el fuego de las antorchas.',
+        prompt: 'Joven mujer bailando apasionadamente en fiesta al aire libre en monte santiagueño, vestido blanco amplio girando, fuego de fogata y antorchas iluminando escena nocturna, gente sentada en rueda observando, guitarra y caja visibles, polvo levantándose, atmósfera de alegría y trágico destino, ilustración de folklore argentino, estilo tradicional santiagueño, acuarela y tinta, colores naranjas rojos y blancos'
+      },
+      {
+        titulo: 'La Promesa',
+        descripcion: 'Convertida en alma milagrosa, la gente baila siete chacareras en su nombre. Y la lluvia llega, como ella no pudo tener.'
+      }
+    ]
+  },
+  {
+    slug: 'el-supay',
+    title: 'El Supay',
+    escenas: [
+      {
+        titulo: 'El Viento Maligno',
+        descripcion: 'El Huayra Muyoj se forma en el choque de dos corrientes. Un remolino que parece venir del monte arrasa todo a su paso.',
+        prompt: 'Remolino de viento demoníaco en paisaje santiagueño, polvo y hojas girando violentamente, figura fantasmal visible en centro del torbellino, choque de dos corrientes de aire, mujeres rezando con cruces en manos pidiendo protección, monte santiagueño al fondo, atmósfera de terror sobrenatural, ilustración de folklore argentino, estilo tradicional, acuarela y tinta, colores grises marrones y ocres'
+      },
+      {
+        titulo: 'Las Múltiples Formas',
+        descripcion: 'El Supay puede ser viento, puede ser bestia, puede ser hombre. Siempre acecha, siempre espera el momento de reclamar almas.'
+      }
+    ]
+  },
+  {
+    slug: 'la-almamula',
+    title: 'La Almamula',
+    escenas: [
+      {
+        titulo: 'La Condena',
+        descripcion: 'Una mujer hermosa es arrastrada por cadenas invisibles. Su cuerpo se deforma, se estira, se convierte en algo que no es humano ni animal.',
+        prompt: 'Transformación de mujer en mula monstruosa, cuerpo mitad humano mitad animal, cadenas pesadas arrastrando, fuego saliendo de nariz y boca, ojos brillando con luz infernal, paisaje de monte santiagueño de noche, tormenta eléctrica en cielo, atmósfera de condena y horror, ilustración de folklore oscuro argentino, estilo tradicional, acuarela y tinta, colores rojos negros y violetas'
+      },
+      {
+        titulo: 'El Rebuzno Nocturno',
+        descripcion: 'En noches de tormenta, se escucha el crujir del freno de oro. Un rebuzno triste resuena. Es ella, condenada a vagar por el pecado.'
+      }
+    ]
+  }
+];
 ---
 
 <Layout title="Historietas - Mitos Santiagueños" description="Historietas ilustradas de los mitos y leyendas de Santiago del Estero">
-  <div class="text-center mb-12">
-    <h1 class="text-4xl font-bold mb-4 text-amber-900">Historietas</h1>
-    <p class="text-xl text-amber-700 max-w-2xl mx-auto">
-      Cada mito cuenta con dos escenas ilustradas listas para generar con IA.
-      Usa los prompts proporcionados para crear las imágenes.
-    </p>
-  </div>
-
-  <div class="space-y-16">
+  
+  <!-- Header -->
+  <section class="text-center mb-16">
+    <span class="inline-block px-4 py-2 rounded-full bg-orange-100 text-orange-700 text-sm font-medium mb-4">
+      Ilustraciones
+    </span>
     
-    <!-- La Telesita -->
-    <section id="la-telesita" class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-bold mb-6 text-amber-900">La Telesita</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 1: La Bailarina</h3>
-          <p class="text-amber-700">Telésfora Castillo baila apasionadamente en una fiesta al aire libre en el monte santiagueño.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Joven mujer bailando chacarera en el monte santiagueño, vestida con pollera amplia blanca y sandalias, pies descalzos sobre tierra roja, movimiento fluido y elegante, alrededor gente sentada en rueda observando, fondo de algarrobos y monte nativo, atardecer dorado, polvo levantándose con el baile, ilustración tradicional argentina, estilo folklore santiagueño, acuarela y tinta, colores tierra cálidos
-            </code>
-          </div>
+    <h1 class="text-5xl font-bold mb-6 font-['DM_Serif_Display'] text-slate-900">
+      Historietas
+    </h1>
+    
+    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+      Cada leyenda cuenta con <strong class="text-orange-600">2 escenas ilustradas</strong> listas para generar con IA. 
+      Cada historieta tiene su propia página con los prompts optimizados.
+    </p>
+  </section>
+
+  <!-- Grid de Historietas -->
+  <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+    {historietas.map((historieta, index) => (
+      <a 
+        href={`/historietas/${historieta.slug}`}
+        class="myth-card block bg-white rounded-2xl p-6 group"
+      >
+        <div class="flex items-start justify-between mb-4">
+          <span class="text-xs font-medium px-3 py-1 rounded-full bg-orange-100 text-orange-700">
+            {historieta.escenas.length} escenas
+          </span>
+          <span class="text-2xl font-bold text-slate-200 font-['DM_Serif_Display']">
+            {String(index + 1).padStart(2, '0')}
+          </span>
         </div>
         
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 2: La Caída</h3>
-          <p class="text-amber-700">La Telesita yace en el suelo, su cuerpo inerte sobre la tierra roja, mientras la gente intenta ayudarla.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Mujer joven desplomada en el suelo de tierra roja, vestido blanco manchado de polvo, cuerpo inerte en posición dramática, gente alrededor con expresiones de pánico y desesperación, alguien ofreciendo agua en cántaro, fondo de monte santiagueño al atardecer, luz dramática, sombras largas, ilustración trágica estilo folklore argentino, acuarela emocional, colores ocres y rojos intensos
-            </code>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- El Kakuy -->
-    <section id="el-kakuy" class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-bold mb-6 text-amber-900">El Kakuy</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 1: El Guardián del Monte</h3>
-          <p class="text-amber-700">El Kakuy se posa en las ramas altas de un algarrobo centenario, vigilando el monte.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Criatura mitológica mitad hombre mitad ave posada en rama de algarrobo centenario, cuerpo cubierto de plumas negras y grises, garras afiladas, ojos amarillos brillantes que brillan en la oscuridad, rostro humanoide con pico, monte santiagueño denso debajo, luz de luna filtrándose, atmósfera misteriosa y sobrenatural, ilustración de mitología argentina, estilo tradicional folklore, acuarela oscura
-            </code>
-          </div>
-        </div>
+        <h2 class="text-xl font-bold mb-3 text-slate-900 group-hover:text-orange-600 transition-colors font-['DM_Serif_Display']">
+          {historieta.title}
+        </h2>
         
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 2: El Ataque</h3>
-          <p class="text-amber-700">El Kakuy desciende para atacar a un cazador que ha matado demasiados animales.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Kakuy atacando desde el cielo, criatura alada con garras extendidas en posición de ataque, cazador aterrorizado en el suelo rodeado de animales muertos, monte santiagueño oscuro, luz de luna iluminando la escena dramática, movimiento y acción, expresión de terror en el rostro humano, ilustración dinámica estilo folklore argentino, acuarela dramática, tonos oscuros y amarillos
-            </code>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- El Crespín -->
-    <section id="el-crespin" class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-bold mb-6 text-amber-900">El Crespín</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 1: El Duende en la Casa</h3>
-          <p class="text-amber-700">El Crespín se sienta en el alféizar con una moneda antigua en sus manos.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Pequeño duende sentado en alféizar de ventana colonial, pelo rojo rizado y larga barba blanca hasta los pies, ropa hecha de hojas secas y fibras naturales, sosteniendo moneda antigua brillante, sonrisa traviesa, interior de casa santiagueña tradicional, luz de luna entrando por ventana, atmósfera mágica y doméstica, ilustración de folklore argentino, acuarela cálida, colores marrones y dorados
-            </code>
-          </div>
-        </div>
+        <p class="text-slate-600 text-sm mb-4">{historieta.escenas[0].descripcion.substring(0, 100)}...</p>
         
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 2: La Ofrenda</h3>
-          <p class="text-amber-700">Una familia deja ofrendas en el patio durante la noche de luna nueva.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Familia santiagueña dejando ofrendas en patio de casa colonial de noche, platito con dulces de chañar, tabaco en hoja de maíz, monedas de cobre sobre manta, luz de luna nueva iluminando, pequeña figura de duende observando desde las sombras con ojos brillantes, atmósfera de ritual tradicional, ilustración de folklore, acuarela nocturna, colores azules y dorados
-            </code>
-          </div>
+        <div class="flex items-center text-orange-600 text-sm font-medium">
+          <span>Ver historieta</span>
+          <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
         </div>
-      </div>
-    </section>
+      </a>
+    ))}
+  </section>
 
-    <!-- La Dama de Blanco -->
-    <section id="la-dama-de-blanco" class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-bold mb-6 text-amber-900">La Dama de Blanco</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 1: La Aparición</h3>
-          <p class="text-amber-700">La Dama de Blanco camina por las calles empedradas del centro histórico.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Figura fantasmal de mujer en vestido blanco antiguo largo caminando por calles empedradas coloniales de Santiago del Estero, velo cubriendo rostro, calle desierta de noche, farolas de gas iluminando tenue, Catedral Basílica al fondo, niebla o neblina, atmósfera sobrenatural y melancólica, ilustración de leyenda de terror tradicional, acuarela etérea, colores azules pálidos y blancos
-            </code>
-          </div>
-        </div>
-        
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 2: El Encuentro</h3>
-          <p class="text-amber-700">Un hombre se encuentra cara a cara con la Dama de Blanco en la oscuridad.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Hombre paralizado de terror frente a fantasma femenina en calle colonial de noche, Dama de Blanco con velo mirando directamente, rostro del hombre mostrando pánico extremo, calles empedradas de Santiago del Estero, sombras alargadas ominosas, luz de luna dramática, atmósfera de horror sobrenatural, ilustración de leyenda tradicional, acuarela oscura, contrastes blanco y negro
-            </code>
-          </div>
-        </div>
-      </div>
-    </section>
+  <!-- Info -->
+  <section class="bg-gradient-to-br from-orange-50 to-amber-50 rounded-3xl p-8 text-center">
+    <h2 class="text-2xl font-bold mb-4 font-['DM_Serif_Display'] text-slate-900">
+      ¿Cómo usar los prompts?
+    </h2>    
+    <p class="text-slate-600 mb-6 max-w-xl mx-auto">
+      Cada escena incluye un prompt optimizado para generar imágenes con IA. 
+      Podés usar Gemini, Midjourney, DALL-E o cualquier herramienta de generación de imágenes.
+    </p>    
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a 
+        href="https://gemini.google.com"
+        target="_blank"
+        rel="noopener"
+        class="btn-primary px-6 py-3 rounded-full font-medium"
+      >
+        Abrir Gemini
+      </a>
+    </div>
+  </section>
 
-    <!-- El Nahuelito -->
-    <section id="el-nahuelito" class="bg-white rounded-lg shadow-lg p-8">
-      <h2 class="text-3xl font-bold mb-6 text-amber-900">El Nahuelito Santiagueño</h2>
-      
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 1: La Criatura del Río</h3>
-          <p class="text-amber-700">El Nahuelito emerge de las aguas oscuras del río Dulce.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Monstruo acuático emergiendo de río oscuro, cabeza de forma equina con ojos brillantes, cuello largo y serpentino, piel escamosa verde oscuro con manchas, agua goteando, atardecer dorado reflejándose en el agua, río Dulce de Santiago del Estero, pescador pequeño en orilla observando con horror, atmósfera misteriosa, ilustración de mitología tradicional, acuarela, tonos verdes y dorados
-            </code>
-          </div>
-        </div>
-        
-        <div class="space-y-4">
-          <h3 class="text-xl font-semibold text-amber-800">Escena 2: El Ataque</h3>
-          <p class="text-amber-700">El Nahuelito ataca una pequeña embarcación en el río.</p>
-          <div class="bg-gray-100 p-4 rounded-lg">
-            <p class="text-sm font-semibold text-gray-600 mb-2">Prompt para Gemini:</p>
-            <code class="text-sm block">
-              Monstruo acuático gigante atacando embarcación en río, Nahuelito elevándose sobre lancha mostrando tamaño colosal, personas cayendo al agua, lancha volcándose, río Dulce agitado violentamente, olas y salpicaduras dramáticas, atardecer rojizo, caos y terror, ilustración de acción dramática, acuarela dinámica, colores verdes oscuros, rojos y dorados
-            </code>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </div>
-
-  <div class="mt-12 bg-amber-100 p-6 rounded-lg">
-    <h3 class="text-xl font-bold mb-4">Archivo completo de prompts</h3>
-    <p class="mb-4">Todos los prompts están disponibles en el archivo <code>prompts-gemini.md</code> del repositorio.</p>
-    <a 
-      href="https://github.com/emilneuraz-ai/mitos-santiaguenos/blob/main/prompts-gemini.md"
-      class="inline-block bg-amber-700 text-white px-6 py-3 rounded-lg hover:bg-amber-800 transition"
-    >
-      Ver todos los prompts
-    </a>
-  </div>
 </Layout>
