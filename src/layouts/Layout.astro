@@ -11,45 +11,33 @@ const { title, description } = Astro.props;
   <meta name="description" content={description || 'Colección de mitos y leyendas de Santiago del Estero'}>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-900 text-white min-h-screen overflow-x-hidden">
-  <!-- Subtle gradient background -->
-  <div class="fixed inset-0 z-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+<body class="bg-white text-slate-800 min-h-screen">
   
-  <!-- Grid background - more visible -->
-  <div class="fixed inset-0 z-0 opacity-40" style="background-image: linear-gradient(rgba(6, 182, 212, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.3) 1px, transparent 1px); background-size: 60px 60px;"></div>
-  
-  <!-- Glow effects - stronger -->
-  <div class="fixed top-0 left-1/4 w-[500px] h-[500px] bg-cyan-400 rounded-full filter blur-[200px] opacity-30 z-0"></div>
-  <div class="fixed bottom-0 right-1/4 w-[500px] h-[500px] bg-purple-500 rounded-full filter blur-[200px] opacity-30 z-0"></div>
-  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500 rounded-full filter blur-[300px] opacity-10 z-0"></div>
-  
-  <header class="relative z-10 border-b border-cyan-400/50 backdrop-blur-md bg-slate-900/80">
-    <div class="container mx-auto px-4 py-6">
+  <header class="border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-5">
       <nav class="flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold font-['Space_Grotesk'] tracking-tight">
-          <span class="text-cyan-400">MITOS</span>
-          <span class="text-white">_</span>
-          <span class="text-purple-400">SANTIAGUEÑOS</span>
+        <a href="/" class="text-2xl font-bold font-['DM_Serif_Display'] tracking-tight text-slate-900">
+          Mitos Santiagueños
         </a>
         <div class="flex gap-8">
-          <a href="/" class="text-sm font-medium text-gray-400 hover:text-cyan-400 transition-colors uppercase tracking-widest">Inicio</a>
-          <a href="/historietas" class="text-sm font-medium text-gray-400 hover:text-cyan-400 transition-colors uppercase tracking-widest">Historietas</a>
+          <a href="/" class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Inicio</a>
+          <a href="/historietas" class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Historietas</a>
         </div>
       </nav>
     </div>
   </header>
   
-  <main class="relative z-10 container mx-auto px-4 py-12">
+  <main class="container mx-auto px-4 py-12">
     <slot />
   </main>
   
-  <footer class="relative z-10 border-t border-cyan-400/50 backdrop-blur-md bg-slate-900/80 mt-20">
-    <div class="container mx-auto px-4 py-8">
+  <footer class="border-t border-slate-200 bg-slate-50 mt-20">
+    <div class="container mx-auto px-4 py-10">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-        <p class="font-['Space_Grotesk'] text-cyan-400 font-bold tracking-widest">MITOS_SANTIAGUEÑOS</p>
-        <p class="text-sm text-gray-500">Folclore tradicional de Santiago del Estero, Argentina</p>
+        <p class="font-['DM_Serif_Display'] text-slate-900 text-lg">Mitos Santiagueños</p>
+        <p class="text-sm text-slate-500">Folclore tradicional de Santiago del Estero, Argentina</p>
       </div>
     </div>
   </footer>
@@ -62,12 +50,12 @@ const { title, description } = Astro.props;
   }
   
   body {
-    font-family: 'Inter', sans-serif;
-    background: #0f172a;
+    font-family: 'DM Sans', sans-serif;
+    background: #ffffff;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'DM Serif Display', serif;
   }
   
   /* Custom scrollbar */
@@ -76,111 +64,56 @@ const { title, description } = Astro.props;
   }
   
   ::-webkit-scrollbar-track {
-    background: #0f172a;
+    background: #f1f5f9;
   }
   
   ::-webkit-scrollbar-thumb {
-    background: #06b6d4;
+    background: #cbd5e1;
     border-radius: 4px;
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: #22d3ee;
+    background: #94a3b8;
   }
   
   /* Selection */
   ::selection {
-    background: rgba(6, 182, 212, 0.3);
-    color: white;
-  }
-  
-  /* Glitch effect class */
-  .glitch {
-    position: relative;
-  }
-  
-  .glitch::before,
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .glitch::before {
-    animation: glitch-1 0.3s infinite linear alternate-reverse;
-    color: #06b6d4;
-    z-index: -1;
-  }
-  
-  .glitch::after {
-    animation: glitch-2 0.3s infinite linear alternate-reverse;
-    color: #a855f7;
-    z-index: -2;
-  }
-  
-  @keyframes glitch-1 {
-    0%, 100% { clip-path: inset(0 0 95% 0); transform: translate(-2px, 0); }
-    20% { clip-path: inset(30% 0 50% 0); transform: translate(2px, 0); }
-    40% { clip-path: inset(60% 0 20% 0); transform: translate(-2px, 0); }
-    60% { clip-path: inset(10% 0 80% 0); transform: translate(2px, 0); }
-    80% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 0); }
-  }
-  
-  @keyframes glitch-2 {
-    0%, 100% { clip-path: inset(95% 0 0 0); transform: translate(2px, 0); }
-    20% { clip-path: inset(50% 0 30% 0); transform: translate(-2px, 0); }
-    40% { clip-path: inset(20% 0 60% 0); transform: translate(2px, 0); }
-    60% { clip-path: inset(80% 0 10% 0); transform: translate(-2px, 0); }
-    80% { clip-path: inset(5% 0 80% 0); transform: translate(2px, 0); }
-  }
-  
-  /* Glow text */
-  .glow-text {
-    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5), 0 0 20px rgba(6, 182, 212, 0.3), 0 0 30px rgba(6, 182, 212, 0.2);
+    background: rgba(234, 88, 12, 0.2);
+    color: #1e293b;
   }
   
   /* Card hover effect */
-  .cyber-card {
+  .myth-card {
     transition: all 0.3s ease;
-    border: 1px solid rgba(6, 182, 212, 0.3);
+    border: 1px solid #e2e8f0;
   }
   
-  .cyber-card:hover {
-    border-color: rgba(6, 182, 212, 0.8);
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.2), inset 0 0 20px rgba(6, 182, 212, 0.05);
-    transform: translateY(-2px);
+  .myth-card:hover {
+    border-color: #ea580c;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
   }
   
   /* Button styles */
-  .cyber-button {
-    position: relative;
-    overflow: hidden;
-    background: transparent;
-    border: 1px solid #06b6d4;
-    color: #06b6d4;
+  .btn-primary {
+    background: #ea580c;
+    color: white;
     transition: all 0.3s ease;
   }
   
-  .cyber-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
-    transition: left 0.5s ease;
+  .btn-primary:hover {
+    background: #c2410c;
+    box-shadow: 0 4px 20px rgba(234, 88, 12, 0.3);
   }
   
-  .cyber-button:hover::before {
-    left: 100%;
+  .btn-secondary {
+    border: 2px solid #ea580c;
+    color: #ea580c;
+    transition: all 0.3s ease;
   }
   
-  .cyber-button:hover {
-    background: rgba(6, 182, 212, 0.1);
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+  .btn-secondary:hover {
+    background: #ea580c;
+    color: white;
   }
 </style>
