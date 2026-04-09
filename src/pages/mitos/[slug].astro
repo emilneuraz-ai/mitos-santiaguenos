@@ -89,6 +89,30 @@ const fuentesPorMito: Record<string, any> = {
       { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis antropológico' },
       { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar/sitio/mitos.php', tipo: 'Cultural', descripcion: 'Análisis del Dr. Jose Uñates' }
     ]
+  },
+  'el-tanicu': {
+    fuentes: [
+      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' },
+      { nombre: 'Diccionario de Mitos y Leyendas - Cuco', url: 'https://www.cuco.com.ar/argentina_santiago_del_estero.htm', tipo: 'Antropológico', descripcion: 'Análisis folclórico' }
+    ]
+  },
+  'el-ckaparilo': {
+    fuentes: [
+      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' },
+      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar', tipo: 'Cultural', descripcion: 'Análisis del nombre quichua' }
+    ]
+  },
+  'la-umita': {
+    fuentes: [
+      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo provincial' },
+      { nombre: 'Alero Quichua Santiagueño', url: 'https://aleroquichua.org.ar', tipo: 'Cultural', descripcion: 'Origen quichua: uma = cabeza' }
+    ]
+  },
+  'el-linyerita': {
+    fuentes: [
+      { nombre: 'Santiago Educativo', url: 'https://santiagoeducativo.com/leyendas/', tipo: 'Educativo', descripcion: 'Recurso educativo con imágenes' },
+      { nombre: 'Cancionero Popular Santiagueño', url: 'https://cancioneropopulardesantiagodelestero.blogspot.com/', tipo: 'Musical', descripcion: 'Canción de Carlos Infante' }
+    ]
   }
 };
 
@@ -105,7 +129,11 @@ export async function getStaticPaths() {
     { slug: 'el-toro-yacu', title: 'El Toro Yacu' },
     { slug: 'la-telesita', title: 'La Telesita' },
     { slug: 'el-supay', title: 'El Supay' },
-    { slug: 'la-almamula', title: 'La Almamula' }
+    { slug: 'la-almamula', title: 'La Almamula' },
+    { slug: 'el-tanicu', title: 'El Tanicu' },
+    { slug: 'el-ckaparilo', title: 'El Ckaparilo' },
+    { slug: 'la-umita', title: 'La Umita' },
+    { slug: 'el-linyerita', title: 'El Linyerita' }
   ];
 
   return mitos.map(mito => ({
